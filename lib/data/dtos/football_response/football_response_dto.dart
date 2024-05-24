@@ -10,11 +10,14 @@ class FootballResponseDto with _$FootballResponseDto {
   const FootballResponseDto._();
   const factory FootballResponseDto({
     required bool status,
-    required  List<LeagueModel> data,
+    required List<LeagueModel> data,
   }) = _FootballResponseDto;
 
-  FootballResponseModel toDomain() => FootballResponseModel(status: status, data: data,);
+  FootballResponseModel toDomain() => FootballResponseModel(
+        status: status,
+        data: data,
+      );
 
-   factory FootballResponseDto.fromJson(Map<String, dynamic> json) =>
-       _$FootballResponseDtoFromJson(json);
+  factory FootballResponseDto.fromJson(Map<String, dynamic> json) =>
+      _$FootballResponseDtoFromJson(json);
 }
