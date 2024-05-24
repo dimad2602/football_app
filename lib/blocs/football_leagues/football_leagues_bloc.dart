@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:football_app/data/repositories/chopper/leagues_repo/i_leagues_repo.dart';
-import 'package:football_app/models/football_models/football_response/football_response_model.dart';
 import 'package:football_app/models/football_models/league/league_model.dart';
+import 'package:football_app/models/football_models/seasons/seasons_league_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'football_leagues_event.dart';
@@ -25,9 +25,9 @@ class FootballLeaguesBloc
   FutureOr<void> _started(Emitter<FootballLeaguesState> emit) async {
     emit(const FootballLeaguesState.loading());
     try {
-      final footballResponse = await _repository.fetchLeagues();
-      if (footballResponse.status == true) {
-        emit(FootballLeaguesState.leagues(leaguesList: footballResponse.data));
+      final leaguesResponse = await _repository.fetchLeagues();
+      if (leaguesResponse.status == true) {
+        emit(FootballLeaguesState.leagues(leaguesList: leaguesResponse.data));
       } else {
         emit(const FootballLeaguesState.error(errorMessage: "Ошибка сервера"));
       }
@@ -39,5 +39,19 @@ class FootballLeaguesBloc
   FutureOr<void> _selectLeague(
       Emitter<FootballLeaguesState> emit, _SelectLeague value) async {
     emit(const FootballLeaguesState.loading());
+    print("value.id = ${value.id}");
+    try {
+      final seasonsResponse =
+          await _repository.fetchLeagueSeasons(id: value.id);
+      print("seasonsResponse.status = ${seasonsResponse.status}");
+      print("seasonsResponse.data = ${seasonsResponse.data}");
+      if (seasonsResponse.status == true) {
+        emit(FootballLeaguesState.seasons(seasonsList: seasonsResponse.data));
+      } else {
+        emit(const FootballLeaguesState.error(errorMessage: "Ошибка сервера"));
+      }
+    } catch (e) {
+      emit(FootballLeaguesState.error(errorMessage: "Ошибка $e"));
+    }
   }
 }

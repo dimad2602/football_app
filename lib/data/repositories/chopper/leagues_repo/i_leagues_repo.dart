@@ -1,5 +1,8 @@
-import 'package:football_app/models/football_models/football_response/football_response_model.dart';
+import 'package:football_app/models/football_models/leagues_response/leagues_response_model.dart';
+import 'package:football_app/models/football_models/seasons_response/seasons_response_model.dart';
 
 abstract class ILeaguesRepository {
-  Future<FootballResponseModel> fetchLeagues();
+  Future<LeaguesResponseModel> fetchLeagues();
+
+  Future<SeasonsResponseModel> fetchLeagueSeasons({required String id});
 }

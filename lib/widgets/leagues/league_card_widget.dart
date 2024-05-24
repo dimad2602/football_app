@@ -13,7 +13,7 @@ class LeagueCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _screenWidth = MediaQuery.of(context).size.width;
+    //double _screenWidth = MediaQuery.of(context).size.width;
     return Container(
       //width: _screenWidth,
       child: Row(children: [

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:football_app/blocs/football_leagues/football_leagues_bloc.dart';
+import 'package:football_app/data/repositories/chopper/leagues_repo/leagues_repo.dart';
 import 'routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(
+      create: (context) => FootballLeaguesBloc(LeaguesRepo()),
+    )
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

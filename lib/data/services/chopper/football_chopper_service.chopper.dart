@@ -27,4 +27,15 @@ final class _$LeaguesChopperService extends LeaguesChopperService {
     );
     return client.send<dynamic, dynamic>($request);
   }
+
+  @override
+  Future<Response<dynamic>> fetchLeagueSeasons(String id) {
+    final Uri $url = Uri.parse('/leagues/${id}/seasons');
+    final Request $request = Request(
+      'GET',
+      $url,
+      client.baseUrl,
+    );
+    return client.send<dynamic, dynamic>($request);
+  }
 }

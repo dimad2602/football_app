@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'football_response_dto.dart';
+part of 'leagues_response_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,35 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-FootballResponseDto _$FootballResponseDtoFromJson(Map<String, dynamic> json) {
-  return _FootballResponseDto.fromJson(json);
+LeaguesResponseModel _$LeaguesResponseModelFromJson(Map<String, dynamic> json) {
+  return _FootballResponseModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FootballResponseDto {
+mixin _$LeaguesResponseModel {
   bool get status => throw _privateConstructorUsedError;
   List<LeagueModel> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FootballResponseDtoCopyWith<FootballResponseDto> get copyWith =>
+  $LeaguesResponseModelCopyWith<LeaguesResponseModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FootballResponseDtoCopyWith<$Res> {
-  factory $FootballResponseDtoCopyWith(
-          FootballResponseDto value, $Res Function(FootballResponseDto) then) =
-      _$FootballResponseDtoCopyWithImpl<$Res, FootballResponseDto>;
+abstract class $LeaguesResponseModelCopyWith<$Res> {
+  factory $LeaguesResponseModelCopyWith(LeaguesResponseModel value,
+          $Res Function(LeaguesResponseModel) then) =
+      _$LeaguesResponseModelCopyWithImpl<$Res, LeaguesResponseModel>;
   @useResult
   $Res call({bool status, List<LeagueModel> data});
 }
 
 /// @nodoc
-class _$FootballResponseDtoCopyWithImpl<$Res, $Val extends FootballResponseDto>
-    implements $FootballResponseDtoCopyWith<$Res> {
-  _$FootballResponseDtoCopyWithImpl(this._value, this._then);
+class _$LeaguesResponseModelCopyWithImpl<$Res,
+        $Val extends LeaguesResponseModel>
+    implements $LeaguesResponseModelCopyWith<$Res> {
+  _$LeaguesResponseModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -68,22 +69,24 @@ class _$FootballResponseDtoCopyWithImpl<$Res, $Val extends FootballResponseDto>
 }
 
 /// @nodoc
-abstract class _$$FootballResponseDtoImplCopyWith<$Res>
-    implements $FootballResponseDtoCopyWith<$Res> {
-  factory _$$FootballResponseDtoImplCopyWith(_$FootballResponseDtoImpl value,
-          $Res Function(_$FootballResponseDtoImpl) then) =
-      __$$FootballResponseDtoImplCopyWithImpl<$Res>;
+abstract class _$$FootballResponseModelImplCopyWith<$Res>
+    implements $LeaguesResponseModelCopyWith<$Res> {
+  factory _$$FootballResponseModelImplCopyWith(
+          _$FootballResponseModelImpl value,
+          $Res Function(_$FootballResponseModelImpl) then) =
+      __$$FootballResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool status, List<LeagueModel> data});
 }
 
 /// @nodoc
-class __$$FootballResponseDtoImplCopyWithImpl<$Res>
-    extends _$FootballResponseDtoCopyWithImpl<$Res, _$FootballResponseDtoImpl>
-    implements _$$FootballResponseDtoImplCopyWith<$Res> {
-  __$$FootballResponseDtoImplCopyWithImpl(_$FootballResponseDtoImpl _value,
-      $Res Function(_$FootballResponseDtoImpl) _then)
+class __$$FootballResponseModelImplCopyWithImpl<$Res>
+    extends _$LeaguesResponseModelCopyWithImpl<$Res,
+        _$FootballResponseModelImpl>
+    implements _$$FootballResponseModelImplCopyWith<$Res> {
+  __$$FootballResponseModelImplCopyWithImpl(_$FootballResponseModelImpl _value,
+      $Res Function(_$FootballResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +95,7 @@ class __$$FootballResponseDtoImplCopyWithImpl<$Res>
     Object? status = null,
     Object? data = null,
   }) {
-    return _then(_$FootballResponseDtoImpl(
+    return _then(_$FootballResponseModelImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -107,14 +110,13 @@ class __$$FootballResponseDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FootballResponseDtoImpl extends _FootballResponseDto {
-  const _$FootballResponseDtoImpl(
+class _$FootballResponseModelImpl implements _FootballResponseModel {
+  const _$FootballResponseModelImpl(
       {required this.status, required final List<LeagueModel> data})
-      : _data = data,
-        super._();
+      : _data = data;
 
-  factory _$FootballResponseDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FootballResponseDtoImplFromJson(json);
+  factory _$FootballResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FootballResponseModelImplFromJson(json);
 
   @override
   final bool status;
@@ -128,14 +130,14 @@ class _$FootballResponseDtoImpl extends _FootballResponseDto {
 
   @override
   String toString() {
-    return 'FootballResponseDto(status: $status, data: $data)';
+    return 'LeaguesResponseModel(status: $status, data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FootballResponseDtoImpl &&
+            other is _$FootballResponseModelImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
@@ -148,26 +150,25 @@ class _$FootballResponseDtoImpl extends _FootballResponseDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FootballResponseDtoImplCopyWith<_$FootballResponseDtoImpl> get copyWith =>
-      __$$FootballResponseDtoImplCopyWithImpl<_$FootballResponseDtoImpl>(
-          this, _$identity);
+  _$$FootballResponseModelImplCopyWith<_$FootballResponseModelImpl>
+      get copyWith => __$$FootballResponseModelImplCopyWithImpl<
+          _$FootballResponseModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FootballResponseDtoImplToJson(
+    return _$$FootballResponseModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _FootballResponseDto extends FootballResponseDto {
-  const factory _FootballResponseDto(
+abstract class _FootballResponseModel implements LeaguesResponseModel {
+  const factory _FootballResponseModel(
       {required final bool status,
-      required final List<LeagueModel> data}) = _$FootballResponseDtoImpl;
-  const _FootballResponseDto._() : super._();
+      required final List<LeagueModel> data}) = _$FootballResponseModelImpl;
 
-  factory _FootballResponseDto.fromJson(Map<String, dynamic> json) =
-      _$FootballResponseDtoImpl.fromJson;
+  factory _FootballResponseModel.fromJson(Map<String, dynamic> json) =
+      _$FootballResponseModelImpl.fromJson;
 
   @override
   bool get status;
@@ -175,6 +176,6 @@ abstract class _FootballResponseDto extends FootballResponseDto {
   List<LeagueModel> get data;
   @override
   @JsonKey(ignore: true)
-  _$$FootballResponseDtoImplCopyWith<_$FootballResponseDtoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FootballResponseModelImplCopyWith<_$FootballResponseModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

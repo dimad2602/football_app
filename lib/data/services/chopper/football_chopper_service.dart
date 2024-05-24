@@ -9,4 +9,7 @@ abstract class LeaguesChopperService extends ChopperService {
 
   @Get()
   Future<Response> fetchPosts();
+
+  @Get(path: '/{id}/seasons')
+  Future<Response> fetchLeagueSeasons(@Path('id') String id);
 }
