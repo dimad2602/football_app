@@ -14,6 +14,7 @@ class LeagueDetailPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => StandingsBloc(StandingsRepo()),
       child: Scaffold(
+        appBar: AppBar(title: const Text('Standings')),
         body: BlocBuilder<FootballLeaguesBloc, FootballLeaguesState>(
           builder: (context, state) {
             return state.map(
@@ -26,11 +27,8 @@ class LeagueDetailPage extends StatelessWidget {
                 leagues: (_) => const Center(
                       child: Text("leagues"),
                     ),
-                seasons: (state) => leagueCompliteUI(
-                      context,
-                      state.seasons,
-                      leagueId
-                    ));
+                seasons: (state) =>
+                    leagueCompliteUI(context, state.seasons, leagueId));
           },
         ),
       ),

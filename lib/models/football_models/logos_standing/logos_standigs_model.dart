@@ -9,7 +9,7 @@ class LogosStandigsModel with _$LogosStandigsModel {
     required String href,
     required int width,
     required int height,
-    required String alt,
+    String? alt,
     required List<String> rel,
     required String lastUpdated,
   }) = _LogosStandigsModel;

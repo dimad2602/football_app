@@ -21,7 +21,7 @@ StandingsModel _$StandingsModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StandingsModel {
   TeamModel get team => throw _privateConstructorUsedError;
-  NoteModel get note => throw _privateConstructorUsedError;
+  NoteModel? get note => throw _privateConstructorUsedError;
   List<StatsModel> get stats => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,10 +36,10 @@ abstract class $StandingsModelCopyWith<$Res> {
           StandingsModel value, $Res Function(StandingsModel) then) =
       _$StandingsModelCopyWithImpl<$Res, StandingsModel>;
   @useResult
-  $Res call({TeamModel team, NoteModel note, List<StatsModel> stats});
+  $Res call({TeamModel team, NoteModel? note, List<StatsModel> stats});
 
   $TeamModelCopyWith<$Res> get team;
-  $NoteModelCopyWith<$Res> get note;
+  $NoteModelCopyWith<$Res>? get note;
 }
 
 /// @nodoc
@@ -56,7 +56,7 @@ class _$StandingsModelCopyWithImpl<$Res, $Val extends StandingsModel>
   @override
   $Res call({
     Object? team = null,
-    Object? note = null,
+    Object? note = freezed,
     Object? stats = null,
   }) {
     return _then(_value.copyWith(
@@ -64,10 +64,10 @@ class _$StandingsModelCopyWithImpl<$Res, $Val extends StandingsModel>
           ? _value.team
           : team // ignore: cast_nullable_to_non_nullable
               as TeamModel,
-      note: null == note
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
-              as NoteModel,
+              as NoteModel?,
       stats: null == stats
           ? _value.stats
           : stats // ignore: cast_nullable_to_non_nullable
@@ -85,8 +85,12 @@ class _$StandingsModelCopyWithImpl<$Res, $Val extends StandingsModel>
 
   @override
   @pragma('vm:prefer-inline')
-  $NoteModelCopyWith<$Res> get note {
-    return $NoteModelCopyWith<$Res>(_value.note, (value) {
+  $NoteModelCopyWith<$Res>? get note {
+    if (_value.note == null) {
+      return null;
+    }
+
+    return $NoteModelCopyWith<$Res>(_value.note!, (value) {
       return _then(_value.copyWith(note: value) as $Val);
     });
   }
@@ -100,12 +104,12 @@ abstract class _$$StandingsModelImplCopyWith<$Res>
       __$$StandingsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({TeamModel team, NoteModel note, List<StatsModel> stats});
+  $Res call({TeamModel team, NoteModel? note, List<StatsModel> stats});
 
   @override
   $TeamModelCopyWith<$Res> get team;
   @override
-  $NoteModelCopyWith<$Res> get note;
+  $NoteModelCopyWith<$Res>? get note;
 }
 
 /// @nodoc
@@ -120,7 +124,7 @@ class __$$StandingsModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? team = null,
-    Object? note = null,
+    Object? note = freezed,
     Object? stats = null,
   }) {
     return _then(_$StandingsModelImpl(
@@ -128,10 +132,10 @@ class __$$StandingsModelImplCopyWithImpl<$Res>
           ? _value.team
           : team // ignore: cast_nullable_to_non_nullable
               as TeamModel,
-      note: null == note
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
-              as NoteModel,
+              as NoteModel?,
       stats: null == stats
           ? _value._stats
           : stats // ignore: cast_nullable_to_non_nullable
@@ -144,9 +148,7 @@ class __$$StandingsModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$StandingsModelImpl implements _StandingsModel {
   const _$StandingsModelImpl(
-      {required this.team,
-      required this.note,
-      required final List<StatsModel> stats})
+      {required this.team, this.note, required final List<StatsModel> stats})
       : _stats = stats;
 
   factory _$StandingsModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -155,7 +157,7 @@ class _$StandingsModelImpl implements _StandingsModel {
   @override
   final TeamModel team;
   @override
-  final NoteModel note;
+  final NoteModel? note;
   final List<StatsModel> _stats;
   @override
   List<StatsModel> get stats {
@@ -202,7 +204,7 @@ class _$StandingsModelImpl implements _StandingsModel {
 abstract class _StandingsModel implements StandingsModel {
   const factory _StandingsModel(
       {required final TeamModel team,
-      required final NoteModel note,
+      final NoteModel? note,
       required final List<StatsModel> stats}) = _$StandingsModelImpl;
 
   factory _StandingsModel.fromJson(Map<String, dynamic> json) =
@@ -211,7 +213,7 @@ abstract class _StandingsModel implements StandingsModel {
   @override
   TeamModel get team;
   @override
-  NoteModel get note;
+  NoteModel? get note;
   @override
   List<StatsModel> get stats;
   @override

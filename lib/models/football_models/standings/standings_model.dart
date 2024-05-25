@@ -10,7 +10,7 @@ part 'standings_model.freezed.dart';
 class StandingsModel with _$StandingsModel {
   const factory StandingsModel({
     required TeamModel team,
-    required NoteModel note,
+    NoteModel? note,
     required List<StatsModel> stats,
   }) = _StandingsModel;
 

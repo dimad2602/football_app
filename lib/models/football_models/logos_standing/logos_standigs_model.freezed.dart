@@ -23,7 +23,7 @@ mixin _$LogosStandigsModel {
   String get href => throw _privateConstructorUsedError;
   int get width => throw _privateConstructorUsedError;
   int get height => throw _privateConstructorUsedError;
-  String get alt => throw _privateConstructorUsedError;
+  String? get alt => throw _privateConstructorUsedError;
   List<String> get rel => throw _privateConstructorUsedError;
   String get lastUpdated => throw _privateConstructorUsedError;
 
@@ -43,7 +43,7 @@ abstract class $LogosStandigsModelCopyWith<$Res> {
       {String href,
       int width,
       int height,
-      String alt,
+      String? alt,
       List<String> rel,
       String lastUpdated});
 }
@@ -64,7 +64,7 @@ class _$LogosStandigsModelCopyWithImpl<$Res, $Val extends LogosStandigsModel>
     Object? href = null,
     Object? width = null,
     Object? height = null,
-    Object? alt = null,
+    Object? alt = freezed,
     Object? rel = null,
     Object? lastUpdated = null,
   }) {
@@ -81,10 +81,10 @@ class _$LogosStandigsModelCopyWithImpl<$Res, $Val extends LogosStandigsModel>
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      alt: null == alt
+      alt: freezed == alt
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       rel: null == rel
           ? _value.rel
           : rel // ignore: cast_nullable_to_non_nullable
@@ -109,7 +109,7 @@ abstract class _$$LogosStandigsModelImplCopyWith<$Res>
       {String href,
       int width,
       int height,
-      String alt,
+      String? alt,
       List<String> rel,
       String lastUpdated});
 }
@@ -128,7 +128,7 @@ class __$$LogosStandigsModelImplCopyWithImpl<$Res>
     Object? href = null,
     Object? width = null,
     Object? height = null,
-    Object? alt = null,
+    Object? alt = freezed,
     Object? rel = null,
     Object? lastUpdated = null,
   }) {
@@ -145,10 +145,10 @@ class __$$LogosStandigsModelImplCopyWithImpl<$Res>
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      alt: null == alt
+      alt: freezed == alt
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       rel: null == rel
           ? _value._rel
           : rel // ignore: cast_nullable_to_non_nullable
@@ -168,7 +168,7 @@ class _$LogosStandigsModelImpl implements _LogosStandigsModel {
       {required this.href,
       required this.width,
       required this.height,
-      required this.alt,
+      this.alt,
       required final List<String> rel,
       required this.lastUpdated})
       : _rel = rel;
@@ -183,7 +183,7 @@ class _$LogosStandigsModelImpl implements _LogosStandigsModel {
   @override
   final int height;
   @override
-  final String alt;
+  final String? alt;
   final List<String> _rel;
   @override
   List<String> get rel {
@@ -239,7 +239,7 @@ abstract class _LogosStandigsModel implements LogosStandigsModel {
       {required final String href,
       required final int width,
       required final int height,
-      required final String alt,
+      final String? alt,
       required final List<String> rel,
       required final String lastUpdated}) = _$LogosStandigsModelImpl;
 
@@ -253,7 +253,7 @@ abstract class _LogosStandigsModel implements LogosStandigsModel {
   @override
   int get height;
   @override
-  String get alt;
+  String? get alt;
   @override
   List<String> get rel;
   @override

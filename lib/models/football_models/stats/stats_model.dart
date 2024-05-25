@@ -12,8 +12,8 @@ class StatsModel with _$StatsModel {
     required String description,
     required String abbreviation,
     required String type,
-    required int value,
-    required String displayValue,
+    int? value,
+    String? displayValue,
   }) = _StatsModel;
 
   factory StatsModel.fromJson(Map<String, Object?> json) =>

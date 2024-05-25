@@ -26,8 +26,8 @@ mixin _$StatsModel {
   String get description => throw _privateConstructorUsedError;
   String get abbreviation => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
-  int get value => throw _privateConstructorUsedError;
-  String get displayValue => throw _privateConstructorUsedError;
+  int? get value => throw _privateConstructorUsedError;
+  String? get displayValue => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,8 +48,8 @@ abstract class $StatsModelCopyWith<$Res> {
       String description,
       String abbreviation,
       String type,
-      int value,
-      String displayValue});
+      int? value,
+      String? displayValue});
 }
 
 /// @nodoc
@@ -71,8 +71,8 @@ class _$StatsModelCopyWithImpl<$Res, $Val extends StatsModel>
     Object? description = null,
     Object? abbreviation = null,
     Object? type = null,
-    Object? value = null,
-    Object? displayValue = null,
+    Object? value = freezed,
+    Object? displayValue = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -99,14 +99,14 @@ class _$StatsModelCopyWithImpl<$Res, $Val extends StatsModel>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      value: null == value
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as int,
-      displayValue: null == displayValue
+              as int?,
+      displayValue: freezed == displayValue
           ? _value.displayValue
           : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -126,8 +126,8 @@ abstract class _$$StatsModelImplCopyWith<$Res>
       String description,
       String abbreviation,
       String type,
-      int value,
-      String displayValue});
+      int? value,
+      String? displayValue});
 }
 
 /// @nodoc
@@ -147,8 +147,8 @@ class __$$StatsModelImplCopyWithImpl<$Res>
     Object? description = null,
     Object? abbreviation = null,
     Object? type = null,
-    Object? value = null,
-    Object? displayValue = null,
+    Object? value = freezed,
+    Object? displayValue = freezed,
   }) {
     return _then(_$StatsModelImpl(
       name: null == name
@@ -175,14 +175,14 @@ class __$$StatsModelImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      value: null == value
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as int,
-      displayValue: null == displayValue
+              as int?,
+      displayValue: freezed == displayValue
           ? _value.displayValue
           : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -197,8 +197,8 @@ class _$StatsModelImpl implements _StatsModel {
       required this.description,
       required this.abbreviation,
       required this.type,
-      required this.value,
-      required this.displayValue});
+      this.value,
+      this.displayValue});
 
   factory _$StatsModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$StatsModelImplFromJson(json);
@@ -216,9 +216,9 @@ class _$StatsModelImpl implements _StatsModel {
   @override
   final String type;
   @override
-  final int value;
+  final int? value;
   @override
-  final String displayValue;
+  final String? displayValue;
 
   @override
   String toString() {
@@ -272,8 +272,8 @@ abstract class _StatsModel implements StatsModel {
       required final String description,
       required final String abbreviation,
       required final String type,
-      required final int value,
-      required final String displayValue}) = _$StatsModelImpl;
+      final int? value,
+      final String? displayValue}) = _$StatsModelImpl;
 
   factory _StatsModel.fromJson(Map<String, dynamic> json) =
       _$StatsModelImpl.fromJson;
@@ -291,9 +291,9 @@ abstract class _StatsModel implements StatsModel {
   @override
   String get type;
   @override
-  int get value;
+  int? get value;
   @override
-  String get displayValue;
+  String? get displayValue;
   @override
   @JsonKey(ignore: true)
   _$$StatsModelImplCopyWith<_$StatsModelImpl> get copyWith =>

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:chopper/chopper.dart';
 import 'package:football_app/data/dtos/standings_response/standigs_response_dto.dart';
 import 'package:football_app/data/repositories/chopper/standings_repo/i_standings_repo.dart';
@@ -17,7 +15,6 @@ class StandingsRepo implements IStandingsRepository {
   Future<StandingsResponseModel> fetchLeagueStandings(
       {required String id, required String season, String? sort}) async {
     final postsService = chopper.getService<LeaguesChopperService>();
-    print("season =${season}");
     try {
       final response =
           await postsService.fetchLeagueStandings(id, season, sort ?? "");
@@ -25,6 +22,7 @@ class StandingsRepo implements IStandingsRepository {
       if (response.isSuccessful) {
         final StandingsResponseDto standingsResponseDto =
             StandingsResponseDto.fromJson(response.body);
+        print("dfdfgdfgd");
         final StandingsResponseModel standingsResponseModel =
             standingsResponseDto.toDomain();
         return standingsResponseModel;
@@ -32,6 +30,7 @@ class StandingsRepo implements IStandingsRepository {
         throw Exception('Failed to fetch standings: ${response.error}');
       }
     } catch (e) {
+      print(e);
       rethrow;
     }
   }

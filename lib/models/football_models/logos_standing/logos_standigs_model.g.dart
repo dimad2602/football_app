@@ -12,7 +12,7 @@ _$LogosStandigsModelImpl _$$LogosStandigsModelImplFromJson(
       href: json['href'] as String,
       width: (json['width'] as num).toInt(),
       height: (json['height'] as num).toInt(),
-      alt: json['alt'] as String,
+      alt: json['alt'] as String?,
       rel: (json['rel'] as List<dynamic>).map((e) => e as String).toList(),
       lastUpdated: json['lastUpdated'] as String,
     );

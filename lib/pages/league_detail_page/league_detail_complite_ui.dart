@@ -26,31 +26,36 @@ Widget leagueCompliteUI(
       ),
       BlocBuilder<StandingsBloc, StandingsState>(
         builder: (context, state) {
-          return Text("");
+          return state.map(
+              initial: (_) => const Text("initial"),
+              error: (_) => const Text("error"),
+              loading: (_) => const Text("loading"),
+              standings: (standing) => Text("${standing.toString()}")
+              // Expanded(
+              //   child: ListView.builder(
+              //     itemCount: seasonsLeague.seasons.length,
+              //     itemBuilder: (context, index) {
+              //       final season = seasonsLeague.seasons[index];
+              //       return ListTile(
+              //         //leading: Image.network(season.logoUrl),
+              //         title: Text(season.displayName),
+              //         subtitle: Column(
+              //           crossAxisAlignment: CrossAxisAlignment.start,
+              //           children: [
+              //             Text('Games: ${season.playedGames}'),
+              //             Text('Wins: ${season.wins}'),
+              //             Text('Draws: ${season.draws}'),
+              //             Text('Losses: ${season.losses}'),
+              //             Text('Points: ${season.points}'),
+              //           ],
+              //         ),
+              //       );
+              //     },
+              //   ),
+              // ),
+              );
         },
       ),
-      // Expanded(
-      //   child: ListView.builder(
-      //     itemCount: seasonsLeague.seasons.length,
-      //     itemBuilder: (context, index) {
-      //       final season = seasonsLeague.seasons[index];
-      //       return ListTile(
-      //         //leading: Image.network(season.logoUrl),
-      //         title: Text(season.displayName),
-      //         subtitle: Column(
-      //           crossAxisAlignment: CrossAxisAlignment.start,
-      //           children: [
-      //             Text('Games: ${season.playedGames}'),
-      //             Text('Wins: ${season.wins}'),
-      //             Text('Draws: ${season.draws}'),
-      //             Text('Losses: ${season.losses}'),
-      //             Text('Points: ${season.points}'),
-      //           ],
-      //         ),
-      //       );
-      //     },
-      //   ),
-      // ),
     ],
   );
 }
