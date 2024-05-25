@@ -317,7 +317,7 @@ mixin _$FootballLeaguesState {
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
     required TResult Function(List<LeagueModel> leaguesList) leagues,
-    required TResult Function(List<SeasonsLeagueModel> seasonsList) seasons,
+    required TResult Function(SeasonsLeagueModel seasons) seasons,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -325,7 +325,7 @@ mixin _$FootballLeaguesState {
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
     TResult? Function(List<LeagueModel> leaguesList)? leagues,
-    TResult? Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult? Function(SeasonsLeagueModel seasons)? seasons,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -333,7 +333,7 @@ mixin _$FootballLeaguesState {
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
     TResult Function(List<LeagueModel> leaguesList)? leagues,
-    TResult Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult Function(SeasonsLeagueModel seasons)? seasons,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -451,7 +451,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
     required TResult Function(List<LeagueModel> leaguesList) leagues,
-    required TResult Function(List<SeasonsLeagueModel> seasonsList) seasons,
+    required TResult Function(SeasonsLeagueModel seasons) seasons,
   }) {
     return error(errorMessage);
   }
@@ -462,7 +462,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
     TResult? Function(List<LeagueModel> leaguesList)? leagues,
-    TResult? Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult? Function(SeasonsLeagueModel seasons)? seasons,
   }) {
     return error?.call(errorMessage);
   }
@@ -473,7 +473,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
     TResult Function(List<LeagueModel> leaguesList)? leagues,
-    TResult Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult Function(SeasonsLeagueModel seasons)? seasons,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -570,7 +570,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
     required TResult Function(List<LeagueModel> leaguesList) leagues,
-    required TResult Function(List<SeasonsLeagueModel> seasonsList) seasons,
+    required TResult Function(SeasonsLeagueModel seasons) seasons,
   }) {
     return loading();
   }
@@ -581,7 +581,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
     TResult? Function(List<LeagueModel> leaguesList)? leagues,
-    TResult? Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult? Function(SeasonsLeagueModel seasons)? seasons,
   }) {
     return loading?.call();
   }
@@ -592,7 +592,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
     TResult Function(List<LeagueModel> leaguesList)? leagues,
-    TResult Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult Function(SeasonsLeagueModel seasons)? seasons,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -718,7 +718,7 @@ class _$LeaguesImpl implements _Leagues {
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
     required TResult Function(List<LeagueModel> leaguesList) leagues,
-    required TResult Function(List<SeasonsLeagueModel> seasonsList) seasons,
+    required TResult Function(SeasonsLeagueModel seasons) seasons,
   }) {
     return leagues(leaguesList);
   }
@@ -729,7 +729,7 @@ class _$LeaguesImpl implements _Leagues {
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
     TResult? Function(List<LeagueModel> leaguesList)? leagues,
-    TResult? Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult? Function(SeasonsLeagueModel seasons)? seasons,
   }) {
     return leagues?.call(leaguesList);
   }
@@ -740,7 +740,7 @@ class _$LeaguesImpl implements _Leagues {
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
     TResult Function(List<LeagueModel> leaguesList)? leagues,
-    TResult Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult Function(SeasonsLeagueModel seasons)? seasons,
     required TResult orElse(),
   }) {
     if (leagues != null) {
@@ -803,7 +803,9 @@ abstract class _$$SeasonsImplCopyWith<$Res> {
           _$SeasonsImpl value, $Res Function(_$SeasonsImpl) then) =
       __$$SeasonsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SeasonsLeagueModel> seasonsList});
+  $Res call({SeasonsLeagueModel seasons});
+
+  $SeasonsLeagueModelCopyWith<$Res> get seasons;
 }
 
 /// @nodoc
@@ -817,34 +819,36 @@ class __$$SeasonsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? seasonsList = null,
+    Object? seasons = null,
   }) {
     return _then(_$SeasonsImpl(
-      seasonsList: null == seasonsList
-          ? _value._seasonsList
-          : seasonsList // ignore: cast_nullable_to_non_nullable
-              as List<SeasonsLeagueModel>,
+      seasons: null == seasons
+          ? _value.seasons
+          : seasons // ignore: cast_nullable_to_non_nullable
+              as SeasonsLeagueModel,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SeasonsLeagueModelCopyWith<$Res> get seasons {
+    return $SeasonsLeagueModelCopyWith<$Res>(_value.seasons, (value) {
+      return _then(_value.copyWith(seasons: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$SeasonsImpl implements _Seasons {
-  const _$SeasonsImpl({required final List<SeasonsLeagueModel> seasonsList})
-      : _seasonsList = seasonsList;
+  const _$SeasonsImpl({required this.seasons});
 
-  final List<SeasonsLeagueModel> _seasonsList;
   @override
-  List<SeasonsLeagueModel> get seasonsList {
-    if (_seasonsList is EqualUnmodifiableListView) return _seasonsList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_seasonsList);
-  }
+  final SeasonsLeagueModel seasons;
 
   @override
   String toString() {
-    return 'FootballLeaguesState.seasons(seasonsList: $seasonsList)';
+    return 'FootballLeaguesState.seasons(seasons: $seasons)';
   }
 
   @override
@@ -852,13 +856,11 @@ class _$SeasonsImpl implements _Seasons {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SeasonsImpl &&
-            const DeepCollectionEquality()
-                .equals(other._seasonsList, _seasonsList));
+            (identical(other.seasons, seasons) || other.seasons == seasons));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_seasonsList));
+  int get hashCode => Object.hash(runtimeType, seasons);
 
   @JsonKey(ignore: true)
   @override
@@ -872,9 +874,9 @@ class _$SeasonsImpl implements _Seasons {
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
     required TResult Function(List<LeagueModel> leaguesList) leagues,
-    required TResult Function(List<SeasonsLeagueModel> seasonsList) seasons,
+    required TResult Function(SeasonsLeagueModel seasons) seasons,
   }) {
-    return seasons(seasonsList);
+    return seasons(this.seasons);
   }
 
   @override
@@ -883,9 +885,9 @@ class _$SeasonsImpl implements _Seasons {
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
     TResult? Function(List<LeagueModel> leaguesList)? leagues,
-    TResult? Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult? Function(SeasonsLeagueModel seasons)? seasons,
   }) {
-    return seasons?.call(seasonsList);
+    return seasons?.call(this.seasons);
   }
 
   @override
@@ -894,11 +896,11 @@ class _$SeasonsImpl implements _Seasons {
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
     TResult Function(List<LeagueModel> leaguesList)? leagues,
-    TResult Function(List<SeasonsLeagueModel> seasonsList)? seasons,
+    TResult Function(SeasonsLeagueModel seasons)? seasons,
     required TResult orElse(),
   }) {
     if (seasons != null) {
-      return seasons(seasonsList);
+      return seasons(this.seasons);
     }
     return orElse();
   }
@@ -942,10 +944,10 @@ class _$SeasonsImpl implements _Seasons {
 }
 
 abstract class _Seasons implements FootballLeaguesState {
-  const factory _Seasons(
-      {required final List<SeasonsLeagueModel> seasonsList}) = _$SeasonsImpl;
+  const factory _Seasons({required final SeasonsLeagueModel seasons}) =
+      _$SeasonsImpl;
 
-  List<SeasonsLeagueModel> get seasonsList;
+  SeasonsLeagueModel get seasons;
   @JsonKey(ignore: true)
   _$$SeasonsImplCopyWith<_$SeasonsImpl> get copyWith =>
       throw _privateConstructorUsedError;

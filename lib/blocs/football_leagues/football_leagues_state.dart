@@ -10,6 +10,6 @@ class FootballLeaguesState with _$FootballLeaguesState {
     required List<LeagueModel> leaguesList,
   }) = _Leagues;
   const factory FootballLeaguesState.seasons({
-    required List<SeasonsLeagueModel> seasonsList,
+    required SeasonsLeagueModel seasons,
   }) = _Seasons;
 }

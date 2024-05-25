@@ -8,7 +8,7 @@ part 'seasons_response_model.freezed.dart';
 class SeasonsResponseModel with _$SeasonsResponseModel {
   const factory SeasonsResponseModel({
     required bool status,
-    required List<SeasonsLeagueModel> data,
+    required SeasonsLeagueModel data,
   }) = _SeasonsResponseModel;
 
   factory SeasonsResponseModel.fromJson(Map<String, Object?> json) =>

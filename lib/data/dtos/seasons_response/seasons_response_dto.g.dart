@@ -10,9 +10,7 @@ _$SeasonsResponseDtoImpl _$$SeasonsResponseDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$SeasonsResponseDtoImpl(
       status: json['status'] as bool,
-      data: (json['data'] as List<dynamic>)
-          .map((e) => SeasonsLeagueModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      data: SeasonsLeagueModel.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$SeasonsResponseDtoImplToJson(

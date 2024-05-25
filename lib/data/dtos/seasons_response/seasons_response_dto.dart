@@ -10,7 +10,7 @@ class SeasonsResponseDto with _$SeasonsResponseDto {
   const SeasonsResponseDto._();
   const factory SeasonsResponseDto({
     required bool status,
-    required List<SeasonsLeagueModel> data,
+    required SeasonsLeagueModel data,
   }) = _SeasonsResponseDto;
 
   SeasonsResponseModel toDomain() => SeasonsResponseModel(

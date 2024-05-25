@@ -1,4 +1,3 @@
-import 'package:football_app/models/football_models/logos/logos_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'types_model.g.dart';

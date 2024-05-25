@@ -6,8 +6,9 @@ part of 'seasons_league_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SeasonModelImpl _$$SeasonModelImplFromJson(Map<String, dynamic> json) =>
-    _$SeasonModelImpl(
+_$SeasonsLeagueModelImpl _$$SeasonsLeagueModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SeasonsLeagueModelImpl(
       name: json['name'] as String,
       desc: json['desc'] as String,
       abbreviation: json['abbreviation'] as String,
@@ -16,7 +17,8 @@ _$SeasonModelImpl _$$SeasonModelImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$SeasonModelImplToJson(_$SeasonModelImpl instance) =>
+Map<String, dynamic> _$$SeasonsLeagueModelImplToJson(
+        _$SeasonsLeagueModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'desc': instance.desc,

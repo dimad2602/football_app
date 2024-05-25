@@ -11,17 +11,17 @@ class LeagueDetailPage extends StatelessWidget {
       body: BlocBuilder<FootballLeaguesBloc, FootballLeaguesState>(
         builder: (context, state) {
           return state.map(
-              error: (_) => Center(
+              error: (_) => const Center(
                     child: Text("error"),
                   ),
-              loading: (_) => Center(
+              loading: (_) => const Center(
                     child: Text("loading"),
                   ),
-              leagues: (_) => Center(
+              leagues: (_) => const Center(
                     child: Text("leagues"),
                   ),
               seasons: (state) => Center(
-                    child: Text("seasons ${state.seasonsList.toString()}"),
+                    child: Text("seasons ${state.seasons.toString()}"),
                   ));
         },
       ),

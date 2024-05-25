@@ -11,7 +11,7 @@ class SeasonsLeagueModel with _$SeasonsLeagueModel {
     required String desc,
     required String abbreviation,
     required List<SeasonModel> seasons,
-  }) = _SeasonModel;
+  }) = _SeasonsLeagueModel;
 
   factory SeasonsLeagueModel.fromJson(Map<String, Object?> json) =>
       _$SeasonsLeagueModelFromJson(json);

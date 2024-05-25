@@ -46,7 +46,7 @@ class FootballLeaguesBloc
       print("seasonsResponse.status = ${seasonsResponse.status}");
       print("seasonsResponse.data = ${seasonsResponse.data}");
       if (seasonsResponse.status == true) {
-        emit(FootballLeaguesState.seasons(seasonsList: seasonsResponse.data));
+        emit(FootballLeaguesState.seasons(seasons: seasonsResponse.data));
       } else {
         emit(const FootballLeaguesState.error(errorMessage: "Ошибка сервера"));
       }

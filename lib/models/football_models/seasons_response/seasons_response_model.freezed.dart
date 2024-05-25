@@ -21,7 +21,7 @@ SeasonsResponseModel _$SeasonsResponseModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SeasonsResponseModel {
   bool get status => throw _privateConstructorUsedError;
-  List<SeasonsLeagueModel> get data => throw _privateConstructorUsedError;
+  SeasonsLeagueModel get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,9 @@ abstract class $SeasonsResponseModelCopyWith<$Res> {
           $Res Function(SeasonsResponseModel) then) =
       _$SeasonsResponseModelCopyWithImpl<$Res, SeasonsResponseModel>;
   @useResult
-  $Res call({bool status, List<SeasonsLeagueModel> data});
+  $Res call({bool status, SeasonsLeagueModel data});
+
+  $SeasonsLeagueModelCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -63,8 +65,16 @@ class _$SeasonsResponseModelCopyWithImpl<$Res,
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<SeasonsLeagueModel>,
+              as SeasonsLeagueModel,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SeasonsLeagueModelCopyWith<$Res> get data {
+    return $SeasonsLeagueModelCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
+    });
   }
 }
 
@@ -76,7 +86,10 @@ abstract class _$$SeasonsResponseModelImplCopyWith<$Res>
       __$$SeasonsResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool status, List<SeasonsLeagueModel> data});
+  $Res call({bool status, SeasonsLeagueModel data});
+
+  @override
+  $SeasonsLeagueModelCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -99,9 +112,9 @@ class __$$SeasonsResponseModelImplCopyWithImpl<$Res>
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
       data: null == data
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<SeasonsLeagueModel>,
+              as SeasonsLeagueModel,
     ));
   }
 }
@@ -109,22 +122,15 @@ class __$$SeasonsResponseModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SeasonsResponseModelImpl implements _SeasonsResponseModel {
-  const _$SeasonsResponseModelImpl(
-      {required this.status, required final List<SeasonsLeagueModel> data})
-      : _data = data;
+  const _$SeasonsResponseModelImpl({required this.status, required this.data});
 
   factory _$SeasonsResponseModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SeasonsResponseModelImplFromJson(json);
 
   @override
   final bool status;
-  final List<SeasonsLeagueModel> _data;
   @override
-  List<SeasonsLeagueModel> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  final SeasonsLeagueModel data;
 
   @override
   String toString() {
@@ -137,13 +143,12 @@ class _$SeasonsResponseModelImpl implements _SeasonsResponseModel {
         (other.runtimeType == runtimeType &&
             other is _$SeasonsResponseModelImpl &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, status, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(runtimeType, status, data);
 
   @JsonKey(ignore: true)
   @override
@@ -163,9 +168,8 @@ class _$SeasonsResponseModelImpl implements _SeasonsResponseModel {
 
 abstract class _SeasonsResponseModel implements SeasonsResponseModel {
   const factory _SeasonsResponseModel(
-          {required final bool status,
-          required final List<SeasonsLeagueModel> data}) =
-      _$SeasonsResponseModelImpl;
+      {required final bool status,
+      required final SeasonsLeagueModel data}) = _$SeasonsResponseModelImpl;
 
   factory _SeasonsResponseModel.fromJson(Map<String, dynamic> json) =
       _$SeasonsResponseModelImpl.fromJson;
@@ -173,7 +177,7 @@ abstract class _SeasonsResponseModel implements SeasonsResponseModel {
   @override
   bool get status;
   @override
-  List<SeasonsLeagueModel> get data;
+  SeasonsLeagueModel get data;
   @override
   @JsonKey(ignore: true)
   _$$SeasonsResponseModelImplCopyWith<_$SeasonsResponseModelImpl>

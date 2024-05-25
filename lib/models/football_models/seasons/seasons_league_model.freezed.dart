@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SeasonsLeagueModel _$SeasonsLeagueModelFromJson(Map<String, dynamic> json) {
-  return _SeasonModel.fromJson(json);
+  return _SeasonsLeagueModel.fromJson(json);
 }
 
 /// @nodoc
@@ -84,11 +84,11 @@ class _$SeasonsLeagueModelCopyWithImpl<$Res, $Val extends SeasonsLeagueModel>
 }
 
 /// @nodoc
-abstract class _$$SeasonModelImplCopyWith<$Res>
+abstract class _$$SeasonsLeagueModelImplCopyWith<$Res>
     implements $SeasonsLeagueModelCopyWith<$Res> {
-  factory _$$SeasonModelImplCopyWith(
-          _$SeasonModelImpl value, $Res Function(_$SeasonModelImpl) then) =
-      __$$SeasonModelImplCopyWithImpl<$Res>;
+  factory _$$SeasonsLeagueModelImplCopyWith(_$SeasonsLeagueModelImpl value,
+          $Res Function(_$SeasonsLeagueModelImpl) then) =
+      __$$SeasonsLeagueModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -99,11 +99,11 @@ abstract class _$$SeasonModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SeasonModelImplCopyWithImpl<$Res>
-    extends _$SeasonsLeagueModelCopyWithImpl<$Res, _$SeasonModelImpl>
-    implements _$$SeasonModelImplCopyWith<$Res> {
-  __$$SeasonModelImplCopyWithImpl(
-      _$SeasonModelImpl _value, $Res Function(_$SeasonModelImpl) _then)
+class __$$SeasonsLeagueModelImplCopyWithImpl<$Res>
+    extends _$SeasonsLeagueModelCopyWithImpl<$Res, _$SeasonsLeagueModelImpl>
+    implements _$$SeasonsLeagueModelImplCopyWith<$Res> {
+  __$$SeasonsLeagueModelImplCopyWithImpl(_$SeasonsLeagueModelImpl _value,
+      $Res Function(_$SeasonsLeagueModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -114,7 +114,7 @@ class __$$SeasonModelImplCopyWithImpl<$Res>
     Object? abbreviation = null,
     Object? seasons = null,
   }) {
-    return _then(_$SeasonModelImpl(
+    return _then(_$SeasonsLeagueModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -137,16 +137,16 @@ class __$$SeasonModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SeasonModelImpl implements _SeasonModel {
-  const _$SeasonModelImpl(
+class _$SeasonsLeagueModelImpl implements _SeasonsLeagueModel {
+  const _$SeasonsLeagueModelImpl(
       {required this.name,
       required this.desc,
       required this.abbreviation,
       required final List<SeasonModel> seasons})
       : _seasons = seasons;
 
-  factory _$SeasonModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SeasonModelImplFromJson(json);
+  factory _$SeasonsLeagueModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SeasonsLeagueModelImplFromJson(json);
 
   @override
   final String name;
@@ -171,7 +171,7 @@ class _$SeasonModelImpl implements _SeasonModel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SeasonModelImpl &&
+            other is _$SeasonsLeagueModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.desc, desc) || other.desc == desc) &&
             (identical(other.abbreviation, abbreviation) ||
@@ -187,26 +187,27 @@ class _$SeasonModelImpl implements _SeasonModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SeasonModelImplCopyWith<_$SeasonModelImpl> get copyWith =>
-      __$$SeasonModelImplCopyWithImpl<_$SeasonModelImpl>(this, _$identity);
+  _$$SeasonsLeagueModelImplCopyWith<_$SeasonsLeagueModelImpl> get copyWith =>
+      __$$SeasonsLeagueModelImplCopyWithImpl<_$SeasonsLeagueModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SeasonModelImplToJson(
+    return _$$SeasonsLeagueModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _SeasonModel implements SeasonsLeagueModel {
-  const factory _SeasonModel(
+abstract class _SeasonsLeagueModel implements SeasonsLeagueModel {
+  const factory _SeasonsLeagueModel(
       {required final String name,
       required final String desc,
       required final String abbreviation,
-      required final List<SeasonModel> seasons}) = _$SeasonModelImpl;
+      required final List<SeasonModel> seasons}) = _$SeasonsLeagueModelImpl;
 
-  factory _SeasonModel.fromJson(Map<String, dynamic> json) =
-      _$SeasonModelImpl.fromJson;
+  factory _SeasonsLeagueModel.fromJson(Map<String, dynamic> json) =
+      _$SeasonsLeagueModelImpl.fromJson;
 
   @override
   String get name;
@@ -218,6 +219,6 @@ abstract class _SeasonModel implements SeasonsLeagueModel {
   List<SeasonModel> get seasons;
   @override
   @JsonKey(ignore: true)
-  _$$SeasonModelImplCopyWith<_$SeasonModelImpl> get copyWith =>
+  _$$SeasonsLeagueModelImplCopyWith<_$SeasonsLeagueModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

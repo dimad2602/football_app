@@ -43,7 +43,7 @@ class LeaguesRepo implements ILeaguesRepository {
       print("fetchLeagueSeasons json = $json");
       final SeasonsResponseDto seasonsResponseDto =
           SeasonsResponseDto.fromJson(json);
-      print("seasonsResponseDto = ${seasonsResponseDto.toString()}");    
+      print("seasonsResponseDto = ${seasonsResponseDto.toString()}");
       final SeasonsResponseModel seasonsResponseModel =
           seasonsResponseDto.toDomain();
 
@@ -51,6 +51,7 @@ class LeaguesRepo implements ILeaguesRepository {
 
       return seasonsResponseModel;
     } catch (e) {
+      print("error:  + ${e}");
       rethrow;
     }
   }
