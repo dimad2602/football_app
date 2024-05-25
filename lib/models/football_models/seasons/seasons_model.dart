@@ -8,8 +8,8 @@ part 'seasons_model.freezed.dart';
 class SeasonModel with _$SeasonModel {
   const factory SeasonModel({
     required int year,
-    //required String startDate,
-    //required String endDate,
+    required String startDate,
+    required String endDate,
     required String displayName,
     required List<TypeModel> types,
   }) = _SeasonModel;

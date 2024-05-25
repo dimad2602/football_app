@@ -22,9 +22,9 @@ TypeModel _$TypeModelFromJson(Map<String, dynamic> json) {
 mixin _$TypeModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get abbreviation =>
-      throw _privateConstructorUsedError; //required String startDate,
-//required String endDate,
+  String get abbreviation => throw _privateConstructorUsedError;
+  String get startDate => throw _privateConstructorUsedError;
+  String get endDate => throw _privateConstructorUsedError;
   bool get hasStandings => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +38,13 @@ abstract class $TypeModelCopyWith<$Res> {
   factory $TypeModelCopyWith(TypeModel value, $Res Function(TypeModel) then) =
       _$TypeModelCopyWithImpl<$Res, TypeModel>;
   @useResult
-  $Res call({String id, String name, String abbreviation, bool hasStandings});
+  $Res call(
+      {String id,
+      String name,
+      String abbreviation,
+      String startDate,
+      String endDate,
+      bool hasStandings});
 }
 
 /// @nodoc
@@ -57,6 +63,8 @@ class _$TypeModelCopyWithImpl<$Res, $Val extends TypeModel>
     Object? id = null,
     Object? name = null,
     Object? abbreviation = null,
+    Object? startDate = null,
+    Object? endDate = null,
     Object? hasStandings = null,
   }) {
     return _then(_value.copyWith(
@@ -71,6 +79,14 @@ class _$TypeModelCopyWithImpl<$Res, $Val extends TypeModel>
       abbreviation: null == abbreviation
           ? _value.abbreviation
           : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      startDate: null == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      endDate: null == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
               as String,
       hasStandings: null == hasStandings
           ? _value.hasStandings
@@ -88,7 +104,13 @@ abstract class _$$TypeModelImplCopyWith<$Res>
       __$$TypeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String abbreviation, bool hasStandings});
+  $Res call(
+      {String id,
+      String name,
+      String abbreviation,
+      String startDate,
+      String endDate,
+      bool hasStandings});
 }
 
 /// @nodoc
@@ -105,6 +127,8 @@ class __$$TypeModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? abbreviation = null,
+    Object? startDate = null,
+    Object? endDate = null,
     Object? hasStandings = null,
   }) {
     return _then(_$TypeModelImpl(
@@ -119,6 +143,14 @@ class __$$TypeModelImplCopyWithImpl<$Res>
       abbreviation: null == abbreviation
           ? _value.abbreviation
           : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      startDate: null == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      endDate: null == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
               as String,
       hasStandings: null == hasStandings
           ? _value.hasStandings
@@ -135,6 +167,8 @@ class _$TypeModelImpl implements _TypeModel {
       {required this.id,
       required this.name,
       required this.abbreviation,
+      required this.startDate,
+      required this.endDate,
       required this.hasStandings});
 
   factory _$TypeModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -146,14 +180,16 @@ class _$TypeModelImpl implements _TypeModel {
   final String name;
   @override
   final String abbreviation;
-//required String startDate,
-//required String endDate,
+  @override
+  final String startDate;
+  @override
+  final String endDate;
   @override
   final bool hasStandings;
 
   @override
   String toString() {
-    return 'TypeModel(id: $id, name: $name, abbreviation: $abbreviation, hasStandings: $hasStandings)';
+    return 'TypeModel(id: $id, name: $name, abbreviation: $abbreviation, startDate: $startDate, endDate: $endDate, hasStandings: $hasStandings)';
   }
 
   @override
@@ -165,14 +201,17 @@ class _$TypeModelImpl implements _TypeModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.abbreviation, abbreviation) ||
                 other.abbreviation == abbreviation) &&
+            (identical(other.startDate, startDate) ||
+                other.startDate == startDate) &&
+            (identical(other.endDate, endDate) || other.endDate == endDate) &&
             (identical(other.hasStandings, hasStandings) ||
                 other.hasStandings == hasStandings));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, abbreviation, hasStandings);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, abbreviation, startDate, endDate, hasStandings);
 
   @JsonKey(ignore: true)
   @override
@@ -193,6 +232,8 @@ abstract class _TypeModel implements TypeModel {
       {required final String id,
       required final String name,
       required final String abbreviation,
+      required final String startDate,
+      required final String endDate,
       required final bool hasStandings}) = _$TypeModelImpl;
 
   factory _TypeModel.fromJson(Map<String, dynamic> json) =
@@ -204,8 +245,11 @@ abstract class _TypeModel implements TypeModel {
   String get name;
   @override
   String get abbreviation;
-  @override //required String startDate,
-//required String endDate,
+  @override
+  String get startDate;
+  @override
+  String get endDate;
+  @override
   bool get hasStandings;
   @override
   @JsonKey(ignore: true)

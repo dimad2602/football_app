@@ -20,9 +20,9 @@ SeasonModel _$SeasonModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SeasonModel {
-  int get year =>
-      throw _privateConstructorUsedError; //required String startDate,
-//required String endDate,
+  int get year => throw _privateConstructorUsedError;
+  String get startDate => throw _privateConstructorUsedError;
+  String get endDate => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
   List<TypeModel> get types => throw _privateConstructorUsedError;
 
@@ -38,7 +38,12 @@ abstract class $SeasonModelCopyWith<$Res> {
           SeasonModel value, $Res Function(SeasonModel) then) =
       _$SeasonModelCopyWithImpl<$Res, SeasonModel>;
   @useResult
-  $Res call({int year, String displayName, List<TypeModel> types});
+  $Res call(
+      {int year,
+      String startDate,
+      String endDate,
+      String displayName,
+      List<TypeModel> types});
 }
 
 /// @nodoc
@@ -55,6 +60,8 @@ class _$SeasonModelCopyWithImpl<$Res, $Val extends SeasonModel>
   @override
   $Res call({
     Object? year = null,
+    Object? startDate = null,
+    Object? endDate = null,
     Object? displayName = null,
     Object? types = null,
   }) {
@@ -63,6 +70,14 @@ class _$SeasonModelCopyWithImpl<$Res, $Val extends SeasonModel>
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int,
+      startDate: null == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      endDate: null == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as String,
       displayName: null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -83,7 +98,12 @@ abstract class _$$SeasonModelImplCopyWith<$Res>
       __$$SeasonModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int year, String displayName, List<TypeModel> types});
+  $Res call(
+      {int year,
+      String startDate,
+      String endDate,
+      String displayName,
+      List<TypeModel> types});
 }
 
 /// @nodoc
@@ -98,6 +118,8 @@ class __$$SeasonModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? year = null,
+    Object? startDate = null,
+    Object? endDate = null,
     Object? displayName = null,
     Object? types = null,
   }) {
@@ -106,6 +128,14 @@ class __$$SeasonModelImplCopyWithImpl<$Res>
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int,
+      startDate: null == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      endDate: null == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as String,
       displayName: null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -123,6 +153,8 @@ class __$$SeasonModelImplCopyWithImpl<$Res>
 class _$SeasonModelImpl implements _SeasonModel {
   const _$SeasonModelImpl(
       {required this.year,
+      required this.startDate,
+      required this.endDate,
       required this.displayName,
       required final List<TypeModel> types})
       : _types = types;
@@ -132,8 +164,10 @@ class _$SeasonModelImpl implements _SeasonModel {
 
   @override
   final int year;
-//required String startDate,
-//required String endDate,
+  @override
+  final String startDate;
+  @override
+  final String endDate;
   @override
   final String displayName;
   final List<TypeModel> _types;
@@ -146,7 +180,7 @@ class _$SeasonModelImpl implements _SeasonModel {
 
   @override
   String toString() {
-    return 'SeasonModel(year: $year, displayName: $displayName, types: $types)';
+    return 'SeasonModel(year: $year, startDate: $startDate, endDate: $endDate, displayName: $displayName, types: $types)';
   }
 
   @override
@@ -155,6 +189,9 @@ class _$SeasonModelImpl implements _SeasonModel {
         (other.runtimeType == runtimeType &&
             other is _$SeasonModelImpl &&
             (identical(other.year, year) || other.year == year) &&
+            (identical(other.startDate, startDate) ||
+                other.startDate == startDate) &&
+            (identical(other.endDate, endDate) || other.endDate == endDate) &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
             const DeepCollectionEquality().equals(other._types, _types));
@@ -162,8 +199,8 @@ class _$SeasonModelImpl implements _SeasonModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, year, displayName,
-      const DeepCollectionEquality().hash(_types));
+  int get hashCode => Object.hash(runtimeType, year, startDate, endDate,
+      displayName, const DeepCollectionEquality().hash(_types));
 
   @JsonKey(ignore: true)
   @override
@@ -182,6 +219,8 @@ class _$SeasonModelImpl implements _SeasonModel {
 abstract class _SeasonModel implements SeasonModel {
   const factory _SeasonModel(
       {required final int year,
+      required final String startDate,
+      required final String endDate,
       required final String displayName,
       required final List<TypeModel> types}) = _$SeasonModelImpl;
 
@@ -190,8 +229,11 @@ abstract class _SeasonModel implements SeasonModel {
 
   @override
   int get year;
-  @override //required String startDate,
-//required String endDate,
+  @override
+  String get startDate;
+  @override
+  String get endDate;
+  @override
   String get displayName;
   @override
   List<TypeModel> get types;

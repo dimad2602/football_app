@@ -9,8 +9,8 @@ class TypeModel with _$TypeModel {
     required String id,
     required String name,
     required String abbreviation,
-    //required String startDate,
-    //required String endDate,
+    required String startDate,
+    required String endDate,
     required bool hasStandings,
   }) = _TypeModel;
 

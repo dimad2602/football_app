@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_app/pages/home_page.dart';
-import 'package:football_app/pages/league_detail_page.dart';
+import 'package:football_app/pages/league_detail_page/league_detail_page.dart';
 import 'package:football_app/pages/leagues_list_page.dart';
 
 final Map<String, Widget Function(BuildContext context)> routes = {

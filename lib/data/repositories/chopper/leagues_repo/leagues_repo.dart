@@ -34,24 +34,18 @@ class LeaguesRepo implements ILeaguesRepository {
   @override
   Future<SeasonsResponseModel> fetchLeagueSeasons({required String id}) async {
     final postsService = chopper.getService<LeaguesChopperService>();
-    print("fetchLeagueSeasons id = $id");
     try {
       final response = await postsService.fetchLeagueSeasons(id);
 
       final dynamic json = jsonDecode(response.body);
 
-      print("fetchLeagueSeasons json = $json");
       final SeasonsResponseDto seasonsResponseDto =
           SeasonsResponseDto.fromJson(json);
-      print("seasonsResponseDto = ${seasonsResponseDto.toString()}");
+
       final SeasonsResponseModel seasonsResponseModel =
           seasonsResponseDto.toDomain();
-
-      print("seasonsResponseModel ${seasonsResponseModel.toJson()}");
-
       return seasonsResponseModel;
     } catch (e) {
-      print("error:  + ${e}");
       rethrow;
     }
   }
