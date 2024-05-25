@@ -19,32 +19,39 @@ mixin _$StandingsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String id, String season, String? sort)
+        selectSeason,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String id, String season, String? sort)? selectSeason,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String id, String season, String? sort)? selectSeason,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_SelectSeason value) selectSeason,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_SelectSeason value)? selectSeason,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_SelectSeason value)? selectSeason,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +114,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String id, String season, String? sort)
+        selectSeason,
   }) {
     return started();
   }
@@ -115,6 +124,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String id, String season, String? sort)? selectSeason,
   }) {
     return started?.call();
   }
@@ -123,6 +133,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String id, String season, String? sort)? selectSeason,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -135,6 +146,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_SelectSeason value) selectSeason,
   }) {
     return started(this);
   }
@@ -143,6 +155,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_SelectSeason value)? selectSeason,
   }) {
     return started?.call(this);
   }
@@ -151,6 +164,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_SelectSeason value)? selectSeason,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -165,12 +179,168 @@ abstract class _Started implements StandingsEvent {
 }
 
 /// @nodoc
+abstract class _$$SelectSeasonImplCopyWith<$Res> {
+  factory _$$SelectSeasonImplCopyWith(
+          _$SelectSeasonImpl value, $Res Function(_$SelectSeasonImpl) then) =
+      __$$SelectSeasonImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id, String season, String? sort});
+}
+
+/// @nodoc
+class __$$SelectSeasonImplCopyWithImpl<$Res>
+    extends _$StandingsEventCopyWithImpl<$Res, _$SelectSeasonImpl>
+    implements _$$SelectSeasonImplCopyWith<$Res> {
+  __$$SelectSeasonImplCopyWithImpl(
+      _$SelectSeasonImpl _value, $Res Function(_$SelectSeasonImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? season = null,
+    Object? sort = freezed,
+  }) {
+    return _then(_$SelectSeasonImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      season: null == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as String,
+      sort: freezed == sort
+          ? _value.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectSeasonImpl implements _SelectSeason {
+  const _$SelectSeasonImpl({required this.id, required this.season, this.sort});
+
+  @override
+  final String id;
+  @override
+  final String season;
+  @override
+  final String? sort;
+
+  @override
+  String toString() {
+    return 'StandingsEvent.selectSeason(id: $id, season: $season, sort: $sort)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectSeasonImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.season, season) || other.season == season) &&
+            (identical(other.sort, sort) || other.sort == sort));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, season, sort);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectSeasonImplCopyWith<_$SelectSeasonImpl> get copyWith =>
+      __$$SelectSeasonImplCopyWithImpl<_$SelectSeasonImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String id, String season, String? sort)
+        selectSeason,
+  }) {
+    return selectSeason(id, season, sort);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String id, String season, String? sort)? selectSeason,
+  }) {
+    return selectSeason?.call(id, season, sort);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String id, String season, String? sort)? selectSeason,
+    required TResult orElse(),
+  }) {
+    if (selectSeason != null) {
+      return selectSeason(id, season, sort);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SelectSeason value) selectSeason,
+  }) {
+    return selectSeason(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_SelectSeason value)? selectSeason,
+  }) {
+    return selectSeason?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SelectSeason value)? selectSeason,
+    required TResult orElse(),
+  }) {
+    if (selectSeason != null) {
+      return selectSeason(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectSeason implements StandingsEvent {
+  const factory _SelectSeason(
+      {required final String id,
+      required final String season,
+      final String? sort}) = _$SelectSeasonImpl;
+
+  String get id;
+  String get season;
+  String? get sort;
+  @JsonKey(ignore: true)
+  _$$SelectSeasonImplCopyWith<_$SelectSeasonImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$StandingsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
+    required TResult Function(StandingsInfoModel standings) standings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -178,6 +348,7 @@ mixin _$StandingsState {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
+    TResult? Function(StandingsInfoModel standings)? standings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,6 +356,7 @@ mixin _$StandingsState {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
+    TResult Function(StandingsInfoModel standings)? standings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +365,7 @@ mixin _$StandingsState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Error value) error,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Standings value) standings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -200,6 +373,7 @@ mixin _$StandingsState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Error value)? error,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Standings value)? standings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -207,6 +381,7 @@ mixin _$StandingsState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Error value)? error,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Standings value)? standings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -271,6 +446,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
+    required TResult Function(StandingsInfoModel standings) standings,
   }) {
     return initial();
   }
@@ -281,6 +457,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
+    TResult? Function(StandingsInfoModel standings)? standings,
   }) {
     return initial?.call();
   }
@@ -291,6 +468,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
+    TResult Function(StandingsInfoModel standings)? standings,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -305,6 +483,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Error value) error,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Standings value) standings,
   }) {
     return initial(this);
   }
@@ -315,6 +494,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Error value)? error,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Standings value)? standings,
   }) {
     return initial?.call(this);
   }
@@ -325,6 +505,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Error value)? error,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Standings value)? standings,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -406,6 +587,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
+    required TResult Function(StandingsInfoModel standings) standings,
   }) {
     return error(errorMessage);
   }
@@ -416,6 +598,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
+    TResult? Function(StandingsInfoModel standings)? standings,
   }) {
     return error?.call(errorMessage);
   }
@@ -426,6 +609,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
+    TResult Function(StandingsInfoModel standings)? standings,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -440,6 +624,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Error value) error,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Standings value) standings,
   }) {
     return error(this);
   }
@@ -450,6 +635,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Error value)? error,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Standings value)? standings,
   }) {
     return error?.call(this);
   }
@@ -460,6 +646,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Error value)? error,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Standings value)? standings,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -519,6 +706,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
+    required TResult Function(StandingsInfoModel standings) standings,
   }) {
     return loading();
   }
@@ -529,6 +717,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
+    TResult? Function(StandingsInfoModel standings)? standings,
   }) {
     return loading?.call();
   }
@@ -539,6 +728,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
+    TResult Function(StandingsInfoModel standings)? standings,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -553,6 +743,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Error value) error,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Standings value) standings,
   }) {
     return loading(this);
   }
@@ -563,6 +754,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Error value)? error,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Standings value)? standings,
   }) {
     return loading?.call(this);
   }
@@ -573,6 +765,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Error value)? error,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Standings value)? standings,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -584,4 +777,161 @@ class _$LoadingImpl implements _Loading {
 
 abstract class _Loading implements StandingsState {
   const factory _Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$StandingsImplCopyWith<$Res> {
+  factory _$$StandingsImplCopyWith(
+          _$StandingsImpl value, $Res Function(_$StandingsImpl) then) =
+      __$$StandingsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({StandingsInfoModel standings});
+
+  $StandingsInfoModelCopyWith<$Res> get standings;
+}
+
+/// @nodoc
+class __$$StandingsImplCopyWithImpl<$Res>
+    extends _$StandingsStateCopyWithImpl<$Res, _$StandingsImpl>
+    implements _$$StandingsImplCopyWith<$Res> {
+  __$$StandingsImplCopyWithImpl(
+      _$StandingsImpl _value, $Res Function(_$StandingsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? standings = null,
+  }) {
+    return _then(_$StandingsImpl(
+      standings: null == standings
+          ? _value.standings
+          : standings // ignore: cast_nullable_to_non_nullable
+              as StandingsInfoModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StandingsInfoModelCopyWith<$Res> get standings {
+    return $StandingsInfoModelCopyWith<$Res>(_value.standings, (value) {
+      return _then(_value.copyWith(standings: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$StandingsImpl implements _Standings {
+  const _$StandingsImpl({required this.standings});
+
+  @override
+  final StandingsInfoModel standings;
+
+  @override
+  String toString() {
+    return 'StandingsState.standings(standings: $standings)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StandingsImpl &&
+            (identical(other.standings, standings) ||
+                other.standings == standings));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, standings);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StandingsImplCopyWith<_$StandingsImpl> get copyWith =>
+      __$$StandingsImplCopyWithImpl<_$StandingsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String errorMessage) error,
+    required TResult Function() loading,
+    required TResult Function(StandingsInfoModel standings) standings,
+  }) {
+    return standings(this.standings);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function()? loading,
+    TResult? Function(StandingsInfoModel standings)? standings,
+  }) {
+    return standings?.call(this.standings);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String errorMessage)? error,
+    TResult Function()? loading,
+    TResult Function(StandingsInfoModel standings)? standings,
+    required TResult orElse(),
+  }) {
+    if (standings != null) {
+      return standings(this.standings);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Error value) error,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Standings value) standings,
+  }) {
+    return standings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Standings value)? standings,
+  }) {
+    return standings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Error value)? error,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Standings value)? standings,
+    required TResult orElse(),
+  }) {
+    if (standings != null) {
+      return standings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Standings implements StandingsState {
+  const factory _Standings({required final StandingsInfoModel standings}) =
+      _$StandingsImpl;
+
+  StandingsInfoModel get standings;
+  @JsonKey(ignore: true)
+  _$$StandingsImplCopyWith<_$StandingsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

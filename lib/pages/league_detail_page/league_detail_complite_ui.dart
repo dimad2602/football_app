@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:football_app/blocs/bloc/standings_bloc.dart';
 import 'package:football_app/models/football_models/seasons/seasons_league_model.dart';
 import 'package:football_app/models/football_models/seasons/seasons_model.dart';
 
 Widget leagueCompliteUI(
-    BuildContext context, SeasonsLeagueModel seasonsLeague) {
+    BuildContext context, SeasonsLeagueModel seasonsLeague, String leagueId) {
   return Column(
     children: [
       DropdownButton<SeasonModel>(
@@ -15,9 +17,16 @@ Widget leagueCompliteUI(
           );
         }).toList(),
         onChanged: (season) {
-          // if (season != null) {
-          //   context.read<StandingsCubit>().selectSeason(season);
-          // }
+          if (season != null) {
+            print("on change season = ${season}");
+            context.read<StandingsBloc>().add(StandingsEvent.selectSeason(
+                id: leagueId, season: season.year.toString()));
+          }
+        },
+      ),
+      BlocBuilder<StandingsBloc, StandingsState>(
+        builder: (context, state) {
+          return Text("");
         },
       ),
       // Expanded(

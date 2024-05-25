@@ -38,4 +38,24 @@ final class _$LeaguesChopperService extends LeaguesChopperService {
     );
     return client.send<dynamic, dynamic>($request);
   }
+
+  @override
+  Future<Response<dynamic>> fetchLeagueStandings(
+    String id,
+    String season,
+    String sort,
+  ) {
+    final Uri $url = Uri.parse('/leagues/${id}/standings');
+    final Map<String, dynamic> $params = <String, dynamic>{
+      'season': season,
+      'sort': sort,
+    };
+    final Request $request = Request(
+      'GET',
+      $url,
+      client.baseUrl,
+      parameters: $params,
+    );
+    return client.send<dynamic, dynamic>($request);
+  }
 }

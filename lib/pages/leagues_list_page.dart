@@ -46,7 +46,7 @@ class _LeaguesListPageState extends State<LeaguesListPage> {
                                           FootballLeaguesEvent.selectLeague(
                                               id: state.leaguesList[index].id));
                                       Navigator.of(context)
-                                          .pushNamed('/LeagueDetailPage');
+                                          .pushNamed('/LeagueDetailPage', arguments: state.leaguesList[index].id);
                                     },
                                     child: LeagueCardWidget(
                                       leagueModel: state.leaguesList[index],

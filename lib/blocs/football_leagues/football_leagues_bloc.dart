@@ -39,12 +39,12 @@ class FootballLeaguesBloc
   FutureOr<void> _selectLeague(
       Emitter<FootballLeaguesState> emit, _SelectLeague value) async {
     emit(const FootballLeaguesState.loading());
-    print("value.id = ${value.id}");
+    //print("value.id = ${value.id}");
     try {
       final seasonsResponse =
           await _repository.fetchLeagueSeasons(id: value.id);
-      print("seasonsResponse.status = ${seasonsResponse.status}");
-      print("seasonsResponse.data = ${seasonsResponse.data}");
+      //print("seasonsResponse.status = ${seasonsResponse.status}");
+      //print("seasonsResponse.data = ${seasonsResponse.data}");
       if (seasonsResponse.status == true) {
         emit(FootballLeaguesState.seasons(seasons: seasonsResponse.data));
       } else {
