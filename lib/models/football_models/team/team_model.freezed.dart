@@ -28,7 +28,7 @@ mixin _$TeamModel {
   String get displayName => throw _privateConstructorUsedError;
   String get shortDisplayName => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
-  List<LogosStandigsModel> get logos => throw _privateConstructorUsedError;
+  List<LogosStandigsModel>? get logos => throw _privateConstructorUsedError;
   bool get isNational => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,7 +51,7 @@ abstract class $TeamModelCopyWith<$Res> {
       String displayName,
       String shortDisplayName,
       bool isActive,
-      List<LogosStandigsModel> logos,
+      List<LogosStandigsModel>? logos,
       bool isNational});
 }
 
@@ -76,7 +76,7 @@ class _$TeamModelCopyWithImpl<$Res, $Val extends TeamModel>
     Object? displayName = null,
     Object? shortDisplayName = null,
     Object? isActive = null,
-    Object? logos = null,
+    Object? logos = freezed,
     Object? isNational = null,
   }) {
     return _then(_value.copyWith(
@@ -112,10 +112,10 @@ class _$TeamModelCopyWithImpl<$Res, $Val extends TeamModel>
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
-      logos: null == logos
+      logos: freezed == logos
           ? _value.logos
           : logos // ignore: cast_nullable_to_non_nullable
-              as List<LogosStandigsModel>,
+              as List<LogosStandigsModel>?,
       isNational: null == isNational
           ? _value.isNational
           : isNational // ignore: cast_nullable_to_non_nullable
@@ -141,7 +141,7 @@ abstract class _$$TeamModelImplCopyWith<$Res>
       String displayName,
       String shortDisplayName,
       bool isActive,
-      List<LogosStandigsModel> logos,
+      List<LogosStandigsModel>? logos,
       bool isNational});
 }
 
@@ -164,7 +164,7 @@ class __$$TeamModelImplCopyWithImpl<$Res>
     Object? displayName = null,
     Object? shortDisplayName = null,
     Object? isActive = null,
-    Object? logos = null,
+    Object? logos = freezed,
     Object? isNational = null,
   }) {
     return _then(_$TeamModelImpl(
@@ -200,10 +200,10 @@ class __$$TeamModelImplCopyWithImpl<$Res>
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
-      logos: null == logos
+      logos: freezed == logos
           ? _value._logos
           : logos // ignore: cast_nullable_to_non_nullable
-              as List<LogosStandigsModel>,
+              as List<LogosStandigsModel>?,
       isNational: null == isNational
           ? _value.isNational
           : isNational // ignore: cast_nullable_to_non_nullable
@@ -224,7 +224,7 @@ class _$TeamModelImpl implements _TeamModel {
       required this.displayName,
       required this.shortDisplayName,
       required this.isActive,
-      required final List<LogosStandigsModel> logos,
+      final List<LogosStandigsModel>? logos,
       required this.isNational})
       : _logos = logos;
 
@@ -247,12 +247,14 @@ class _$TeamModelImpl implements _TeamModel {
   final String shortDisplayName;
   @override
   final bool isActive;
-  final List<LogosStandigsModel> _logos;
+  final List<LogosStandigsModel>? _logos;
   @override
-  List<LogosStandigsModel> get logos {
+  List<LogosStandigsModel>? get logos {
+    final value = _logos;
+    if (value == null) return null;
     if (_logos is EqualUnmodifiableListView) return _logos;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_logos);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -325,7 +327,7 @@ abstract class _TeamModel implements TeamModel {
       required final String displayName,
       required final String shortDisplayName,
       required final bool isActive,
-      required final List<LogosStandigsModel> logos,
+      final List<LogosStandigsModel>? logos,
       required final bool isNational}) = _$TeamModelImpl;
 
   factory _TeamModel.fromJson(Map<String, dynamic> json) =
@@ -348,7 +350,7 @@ abstract class _TeamModel implements TeamModel {
   @override
   bool get isActive;
   @override
-  List<LogosStandigsModel> get logos;
+  List<LogosStandigsModel>? get logos;
   @override
   bool get isNational;
   @override

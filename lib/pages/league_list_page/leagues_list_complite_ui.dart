@@ -27,7 +27,7 @@ Widget leaguesListCompliteUI(BuildContext context, List<LeagueModel> leaguesList
                               arguments: leaguesList[index].id);
                         },
                         child: LeagueCardWidget(
-                          leagueModel: leaguesList[index],
+                          leagueModel: leaguesList[index], isDark: false,
                         ),
                       ),
                     ],

@@ -9,9 +9,9 @@ class StatsModel with _$StatsModel {
     required String name,
     required String displayName,
     required String shortDisplayName,
-    required String description,
-    required String abbreviation,
-    required String type,
+    String? description,
+    String? abbreviation,
+    String? type,
     int? value,
     String? displayValue,
   }) = _StatsModel;

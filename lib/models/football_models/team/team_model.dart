@@ -15,7 +15,7 @@ class TeamModel with _$TeamModel {
     required String displayName,
     required String shortDisplayName,
     required bool isActive,
-    required List<LogosStandigsModel> logos,
+    List<LogosStandigsModel>? logos,
     required bool isNational,
   }) = _TeamModel;
 

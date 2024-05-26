@@ -16,22 +16,25 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$StandingsEvent {
+  String get id => throw _privateConstructorUsedError;
+  String get season => throw _privateConstructorUsedError;
+  String? get sort => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(String id, String season, String? sort) started,
     required TResult Function(String id, String season, String? sort)
         selectSeason,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(String id, String season, String? sort)? started,
     TResult? Function(String id, String season, String? sort)? selectSeason,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(String id, String season, String? sort)? started,
     TResult Function(String id, String season, String? sort)? selectSeason,
     required TResult orElse(),
   }) =>
@@ -55,6 +58,10 @@ mixin _$StandingsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $StandingsEventCopyWith<StandingsEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -62,6 +69,8 @@ abstract class $StandingsEventCopyWith<$Res> {
   factory $StandingsEventCopyWith(
           StandingsEvent value, $Res Function(StandingsEvent) then) =
       _$StandingsEventCopyWithImpl<$Res, StandingsEvent>;
+  @useResult
+  $Res call({String id, String season, String? sort});
 }
 
 /// @nodoc
@@ -73,13 +82,40 @@ class _$StandingsEventCopyWithImpl<$Res, $Val extends StandingsEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? season = null,
+    Object? sort = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      season: null == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as String,
+      sort: freezed == sort
+          ? _value.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
+abstract class _$$StartedImplCopyWith<$Res>
+    implements $StandingsEventCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
           _$StartedImpl value, $Res Function(_$StartedImpl) then) =
       __$$StartedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String season, String? sort});
 }
 
 /// @nodoc
@@ -89,55 +125,95 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? season = null,
+    Object? sort = freezed,
+  }) {
+    return _then(_$StartedImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      season: null == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as String,
+      sort: freezed == sort
+          ? _value.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+  const _$StartedImpl({required this.id, required this.season, this.sort});
+
+  @override
+  final String id;
+  @override
+  final String season;
+  @override
+  final String? sort;
 
   @override
   String toString() {
-    return 'StandingsEvent.started()';
+    return 'StandingsEvent.started(id: $id, season: $season, sort: $sort)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$StartedImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.season, season) || other.season == season) &&
+            (identical(other.sort, sort) || other.sort == sort));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, id, season, sort);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
+      __$$StartedImplCopyWithImpl<_$StartedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(String id, String season, String? sort) started,
     required TResult Function(String id, String season, String? sort)
         selectSeason,
   }) {
-    return started();
+    return started(id, season, sort);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(String id, String season, String? sort)? started,
     TResult? Function(String id, String season, String? sort)? selectSeason,
   }) {
-    return started?.call();
+    return started?.call(id, season, sort);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(String id, String season, String? sort)? started,
     TResult Function(String id, String season, String? sort)? selectSeason,
     required TResult orElse(),
   }) {
     if (started != null) {
-      return started();
+      return started(id, season, sort);
     }
     return orElse();
   }
@@ -175,14 +251,30 @@ class _$StartedImpl implements _Started {
 }
 
 abstract class _Started implements StandingsEvent {
-  const factory _Started() = _$StartedImpl;
+  const factory _Started(
+      {required final String id,
+      required final String season,
+      final String? sort}) = _$StartedImpl;
+
+  @override
+  String get id;
+  @override
+  String get season;
+  @override
+  String? get sort;
+  @override
+  @JsonKey(ignore: true)
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectSeasonImplCopyWith<$Res> {
+abstract class _$$SelectSeasonImplCopyWith<$Res>
+    implements $StandingsEventCopyWith<$Res> {
   factory _$$SelectSeasonImplCopyWith(
           _$SelectSeasonImpl value, $Res Function(_$SelectSeasonImpl) then) =
       __$$SelectSeasonImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String id, String season, String? sort});
 }
@@ -258,7 +350,7 @@ class _$SelectSeasonImpl implements _SelectSeason {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(String id, String season, String? sort) started,
     required TResult Function(String id, String season, String? sort)
         selectSeason,
   }) {
@@ -268,7 +360,7 @@ class _$SelectSeasonImpl implements _SelectSeason {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(String id, String season, String? sort)? started,
     TResult? Function(String id, String season, String? sort)? selectSeason,
   }) {
     return selectSeason?.call(id, season, sort);
@@ -277,7 +369,7 @@ class _$SelectSeasonImpl implements _SelectSeason {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(String id, String season, String? sort)? started,
     TResult Function(String id, String season, String? sort)? selectSeason,
     required TResult orElse(),
   }) {
@@ -325,9 +417,13 @@ abstract class _SelectSeason implements StandingsEvent {
       required final String season,
       final String? sort}) = _$SelectSeasonImpl;
 
+  @override
   String get id;
+  @override
   String get season;
+  @override
   String? get sort;
+  @override
   @JsonKey(ignore: true)
   _$$SelectSeasonImplCopyWith<_$SelectSeasonImpl> get copyWith =>
       throw _privateConstructorUsedError;

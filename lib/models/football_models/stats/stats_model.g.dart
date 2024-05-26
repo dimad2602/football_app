@@ -11,9 +11,9 @@ _$StatsModelImpl _$$StatsModelImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       displayName: json['displayName'] as String,
       shortDisplayName: json['shortDisplayName'] as String,
-      description: json['description'] as String,
-      abbreviation: json['abbreviation'] as String,
-      type: json['type'] as String,
+      description: json['description'] as String?,
+      abbreviation: json['abbreviation'] as String?,
+      type: json['type'] as String?,
       value: (json['value'] as num?)?.toInt(),
       displayValue: json['displayValue'] as String?,
     );

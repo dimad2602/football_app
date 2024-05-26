@@ -11,24 +11,23 @@ class LeagueDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final leagueId = ModalRoute.of(context)?.settings.arguments as String;
-    return BlocProvider(
-      create: (context) => StandingsBloc(StandingsRepo()),
-      child: Scaffold(
-        appBar: AppBar(title: const Text('Standings')),
-        body: BlocBuilder<FootballLeaguesBloc, FootballLeaguesState>(
+    return Scaffold(
+      appBar: AppBar(title: const Text('Standings')),
+      body: BlocProvider(
+        create: (context) => StandingsBloc(StandingsRepo()),
+        child: BlocBuilder<FootballLeaguesBloc, FootballLeaguesState>(
           builder: (context, state) {
             return state.map(
                 error: (_) => const Center(
                       child: Text("error"),
                     ),
-                loading: (_) => const Center(
-                      child: Text("loading"),
-                    ),
+                loading: (_) =>
+                    const Center(child: CircularProgressIndicator()),
                 leagues: (_) => const Center(
-                      child: Text("leagues"),
+                      child: Text("error"),
                     ),
                 seasons: (state) =>
-                    leagueCompliteUI(context, state.seasons, leagueId));
+                    leagueDetailCompliteUI(context, state.seasons, leagueId));
           },
         ),
       ),

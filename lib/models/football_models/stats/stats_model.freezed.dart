@@ -23,9 +23,9 @@ mixin _$StatsModel {
   String get name => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
   String get shortDisplayName => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get abbreviation => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get abbreviation => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
   int? get value => throw _privateConstructorUsedError;
   String? get displayValue => throw _privateConstructorUsedError;
 
@@ -45,9 +45,9 @@ abstract class $StatsModelCopyWith<$Res> {
       {String name,
       String displayName,
       String shortDisplayName,
-      String description,
-      String abbreviation,
-      String type,
+      String? description,
+      String? abbreviation,
+      String? type,
       int? value,
       String? displayValue});
 }
@@ -68,9 +68,9 @@ class _$StatsModelCopyWithImpl<$Res, $Val extends StatsModel>
     Object? name = null,
     Object? displayName = null,
     Object? shortDisplayName = null,
-    Object? description = null,
-    Object? abbreviation = null,
-    Object? type = null,
+    Object? description = freezed,
+    Object? abbreviation = freezed,
+    Object? type = freezed,
     Object? value = freezed,
     Object? displayValue = freezed,
   }) {
@@ -87,18 +87,18 @@ class _$StatsModelCopyWithImpl<$Res, $Val extends StatsModel>
           ? _value.shortDisplayName
           : shortDisplayName // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      abbreviation: null == abbreviation
+              as String?,
+      abbreviation: freezed == abbreviation
           ? _value.abbreviation
           : abbreviation // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
+              as String?,
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -123,9 +123,9 @@ abstract class _$$StatsModelImplCopyWith<$Res>
       {String name,
       String displayName,
       String shortDisplayName,
-      String description,
-      String abbreviation,
-      String type,
+      String? description,
+      String? abbreviation,
+      String? type,
       int? value,
       String? displayValue});
 }
@@ -144,9 +144,9 @@ class __$$StatsModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? displayName = null,
     Object? shortDisplayName = null,
-    Object? description = null,
-    Object? abbreviation = null,
-    Object? type = null,
+    Object? description = freezed,
+    Object? abbreviation = freezed,
+    Object? type = freezed,
     Object? value = freezed,
     Object? displayValue = freezed,
   }) {
@@ -163,18 +163,18 @@ class __$$StatsModelImplCopyWithImpl<$Res>
           ? _value.shortDisplayName
           : shortDisplayName // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      abbreviation: null == abbreviation
+              as String?,
+      abbreviation: freezed == abbreviation
           ? _value.abbreviation
           : abbreviation // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
+              as String?,
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -194,9 +194,9 @@ class _$StatsModelImpl implements _StatsModel {
       {required this.name,
       required this.displayName,
       required this.shortDisplayName,
-      required this.description,
-      required this.abbreviation,
-      required this.type,
+      this.description,
+      this.abbreviation,
+      this.type,
       this.value,
       this.displayValue});
 
@@ -210,11 +210,11 @@ class _$StatsModelImpl implements _StatsModel {
   @override
   final String shortDisplayName;
   @override
-  final String description;
+  final String? description;
   @override
-  final String abbreviation;
+  final String? abbreviation;
   @override
-  final String type;
+  final String? type;
   @override
   final int? value;
   @override
@@ -269,9 +269,9 @@ abstract class _StatsModel implements StatsModel {
       {required final String name,
       required final String displayName,
       required final String shortDisplayName,
-      required final String description,
-      required final String abbreviation,
-      required final String type,
+      final String? description,
+      final String? abbreviation,
+      final String? type,
       final int? value,
       final String? displayValue}) = _$StatsModelImpl;
 
@@ -285,11 +285,11 @@ abstract class _StatsModel implements StatsModel {
   @override
   String get shortDisplayName;
   @override
-  String get description;
+  String? get description;
   @override
-  String get abbreviation;
+  String? get abbreviation;
   @override
-  String get type;
+  String? get type;
   @override
   int? get value;
   @override

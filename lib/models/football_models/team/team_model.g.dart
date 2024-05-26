@@ -16,8 +16,8 @@ _$TeamModelImpl _$$TeamModelImplFromJson(Map<String, dynamic> json) =>
       displayName: json['displayName'] as String,
       shortDisplayName: json['shortDisplayName'] as String,
       isActive: json['isActive'] as bool,
-      logos: (json['logos'] as List<dynamic>)
-          .map((e) => LogosStandigsModel.fromJson(e as Map<String, dynamic>))
+      logos: (json['logos'] as List<dynamic>?)
+          ?.map((e) => LogosStandigsModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       isNational: json['isNational'] as bool,
     );

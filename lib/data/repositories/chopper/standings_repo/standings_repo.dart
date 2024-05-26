@@ -18,11 +18,9 @@ class StandingsRepo implements IStandingsRepository {
     try {
       final response =
           await postsService.fetchLeagueStandings(id, season, sort ?? "");
-      print("response.body =${response.body}");
       if (response.isSuccessful) {
         final StandingsResponseDto standingsResponseDto =
             StandingsResponseDto.fromJson(response.body);
-        print("dfdfgdfgd");
         final StandingsResponseModel standingsResponseModel =
             standingsResponseDto.toDomain();
         return standingsResponseModel;
@@ -30,7 +28,6 @@ class StandingsRepo implements IStandingsRepository {
         throw Exception('Failed to fetch standings: ${response.error}');
       }
     } catch (e) {
-      print(e);
       rethrow;
     }
   }

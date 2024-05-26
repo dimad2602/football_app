@@ -11,7 +11,7 @@ class StandingsModel with _$StandingsModel {
   const factory StandingsModel({
     required TeamModel team,
     NoteModel? note,
-    required List<StatsModel> stats,
+    List<StatsModel>? stats,
   }) = _StandingsModel;
 
   factory StandingsModel.fromJson(Map<String, Object?> json) =>

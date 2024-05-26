@@ -12,8 +12,8 @@ _$StandingsModelImpl _$$StandingsModelImplFromJson(Map<String, dynamic> json) =>
       note: json['note'] == null
           ? null
           : NoteModel.fromJson(json['note'] as Map<String, dynamic>),
-      stats: (json['stats'] as List<dynamic>)
-          .map((e) => StatsModel.fromJson(e as Map<String, dynamic>))
+      stats: (json['stats'] as List<dynamic>?)
+          ?.map((e) => StatsModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
