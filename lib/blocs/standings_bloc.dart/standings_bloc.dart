@@ -14,7 +14,7 @@ class StandingsBloc extends Bloc<StandingsEvent, StandingsState> {
       await event.map(
         started: (_) => _started(emit),
         selectSeason: (value) => _selectSeason(value, emit),
-      ); //, value
+      );
     });
   }
 
@@ -23,12 +23,11 @@ class StandingsBloc extends Bloc<StandingsEvent, StandingsState> {
   Future<void> _selectSeason(
       _SelectSeason value, Emitter<StandingsState> emit) async {
     emit(const StandingsState.loading());
-    print("_selectSeason = ${value.toString()}");
     try {
-      final standingsResponse =
-          await _repository.fetchLeagueStandings(id: value.id, season: value.season);
+      final standingsResponse = await _repository.fetchLeagueStandings(
+          id: value.id, season: value.season);
       if (standingsResponse.status == true) {
-        emit(StandingsState.standings(standings: standingsResponse.data));
+        emit(StandingsState.standings(standingInfo: standingsResponse.data));
       } else {
         emit(const StandingsState.error(errorMessage: "Ошибка сервера"));
       }

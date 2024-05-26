@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_app/blocs/football_leagues/football_leagues_bloc.dart';
+import 'package:football_app/pages/league_list_page/leagues_list_complite_ui.dart';
 import 'package:football_app/widgets/leagues/league_card_widget.dart';
 
 class LeaguesListPage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _LeaguesListPageState extends State<LeaguesListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('leagues')),
       body: BlocBuilder<FootballLeaguesBloc, FootballLeaguesState>(
         builder: (context, state) {
           return state.map(
@@ -45,8 +47,10 @@ class _LeaguesListPageState extends State<LeaguesListPage> {
                                       context.read<FootballLeaguesBloc>().add(
                                           FootballLeaguesEvent.selectLeague(
                                               id: state.leaguesList[index].id));
-                                      Navigator.of(context)
-                                          .pushNamed('/LeagueDetailPage', arguments: state.leaguesList[index].id);
+                                      Navigator.of(context).pushNamed(
+                                          '/LeagueDetailPage',
+                                          arguments:
+                                              state.leaguesList[index].id);
                                     },
                                     child: LeagueCardWidget(
                                       leagueModel: state.leaguesList[index],
@@ -58,7 +62,8 @@ class _LeaguesListPageState extends State<LeaguesListPage> {
                           },
                         )
                       : const SizedBox.shrink()),
-              seasons: (_) => const Center(child: Text("seasons")));
+              seasons: (state) =>
+                  leaguesListCompliteUI(context, state.leaguesList));
         },
       ),
     );

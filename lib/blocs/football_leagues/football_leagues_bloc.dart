@@ -39,14 +39,21 @@ class FootballLeaguesBloc
   FutureOr<void> _selectLeague(
       Emitter<FootballLeaguesState> emit, _SelectLeague value) async {
     emit(const FootballLeaguesState.loading());
-    //print("value.id = ${value.id}");
     try {
       final seasonsResponse =
           await _repository.fetchLeagueSeasons(id: value.id);
-      //print("seasonsResponse.status = ${seasonsResponse.status}");
-      //print("seasonsResponse.data = ${seasonsResponse.data}");
       if (seasonsResponse.status == true) {
-        emit(FootballLeaguesState.seasons(seasons: seasonsResponse.data));
+        final leaguesList = await _repository.getLeaguesResponse();
+        if (leaguesList.status == true) {
+          emit(FootballLeaguesState.seasons(
+              seasons: seasonsResponse.data, leaguesList: leaguesList.data));
+        } else {
+          final leaguesResponse = await _repository.fetchLeagues();
+          if (leaguesResponse.status == true) {
+            emit(FootballLeaguesState.seasons(
+              seasons: seasonsResponse.data, leaguesList: leaguesResponse.data));
+          }
+        }
       } else {
         emit(const FootballLeaguesState.error(errorMessage: "Ошибка сервера"));
       }

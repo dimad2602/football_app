@@ -340,7 +340,7 @@ mixin _$StandingsState {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
-    required TResult Function(StandingsInfoModel standings) standings,
+    required TResult Function(StandingsInfoModel standingInfo) standings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -348,7 +348,7 @@ mixin _$StandingsState {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
-    TResult? Function(StandingsInfoModel standings)? standings,
+    TResult? Function(StandingsInfoModel standingInfo)? standings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -356,7 +356,7 @@ mixin _$StandingsState {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
-    TResult Function(StandingsInfoModel standings)? standings,
+    TResult Function(StandingsInfoModel standingInfo)? standings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -446,7 +446,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
-    required TResult Function(StandingsInfoModel standings) standings,
+    required TResult Function(StandingsInfoModel standingInfo) standings,
   }) {
     return initial();
   }
@@ -457,7 +457,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
-    TResult? Function(StandingsInfoModel standings)? standings,
+    TResult? Function(StandingsInfoModel standingInfo)? standings,
   }) {
     return initial?.call();
   }
@@ -468,7 +468,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
-    TResult Function(StandingsInfoModel standings)? standings,
+    TResult Function(StandingsInfoModel standingInfo)? standings,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -587,7 +587,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
-    required TResult Function(StandingsInfoModel standings) standings,
+    required TResult Function(StandingsInfoModel standingInfo) standings,
   }) {
     return error(errorMessage);
   }
@@ -598,7 +598,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
-    TResult? Function(StandingsInfoModel standings)? standings,
+    TResult? Function(StandingsInfoModel standingInfo)? standings,
   }) {
     return error?.call(errorMessage);
   }
@@ -609,7 +609,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
-    TResult Function(StandingsInfoModel standings)? standings,
+    TResult Function(StandingsInfoModel standingInfo)? standings,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -706,7 +706,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
-    required TResult Function(StandingsInfoModel standings) standings,
+    required TResult Function(StandingsInfoModel standingInfo) standings,
   }) {
     return loading();
   }
@@ -717,7 +717,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
-    TResult? Function(StandingsInfoModel standings)? standings,
+    TResult? Function(StandingsInfoModel standingInfo)? standings,
   }) {
     return loading?.call();
   }
@@ -728,7 +728,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
-    TResult Function(StandingsInfoModel standings)? standings,
+    TResult Function(StandingsInfoModel standingInfo)? standings,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -785,9 +785,9 @@ abstract class _$$StandingsImplCopyWith<$Res> {
           _$StandingsImpl value, $Res Function(_$StandingsImpl) then) =
       __$$StandingsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({StandingsInfoModel standings});
+  $Res call({StandingsInfoModel standingInfo});
 
-  $StandingsInfoModelCopyWith<$Res> get standings;
+  $StandingsInfoModelCopyWith<$Res> get standingInfo;
 }
 
 /// @nodoc
@@ -801,21 +801,21 @@ class __$$StandingsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? standings = null,
+    Object? standingInfo = null,
   }) {
     return _then(_$StandingsImpl(
-      standings: null == standings
-          ? _value.standings
-          : standings // ignore: cast_nullable_to_non_nullable
+      standingInfo: null == standingInfo
+          ? _value.standingInfo
+          : standingInfo // ignore: cast_nullable_to_non_nullable
               as StandingsInfoModel,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $StandingsInfoModelCopyWith<$Res> get standings {
-    return $StandingsInfoModelCopyWith<$Res>(_value.standings, (value) {
-      return _then(_value.copyWith(standings: value));
+  $StandingsInfoModelCopyWith<$Res> get standingInfo {
+    return $StandingsInfoModelCopyWith<$Res>(_value.standingInfo, (value) {
+      return _then(_value.copyWith(standingInfo: value));
     });
   }
 }
@@ -823,14 +823,14 @@ class __$$StandingsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$StandingsImpl implements _Standings {
-  const _$StandingsImpl({required this.standings});
+  const _$StandingsImpl({required this.standingInfo});
 
   @override
-  final StandingsInfoModel standings;
+  final StandingsInfoModel standingInfo;
 
   @override
   String toString() {
-    return 'StandingsState.standings(standings: $standings)';
+    return 'StandingsState.standings(standingInfo: $standingInfo)';
   }
 
   @override
@@ -838,12 +838,12 @@ class _$StandingsImpl implements _Standings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StandingsImpl &&
-            (identical(other.standings, standings) ||
-                other.standings == standings));
+            (identical(other.standingInfo, standingInfo) ||
+                other.standingInfo == standingInfo));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, standings);
+  int get hashCode => Object.hash(runtimeType, standingInfo);
 
   @JsonKey(ignore: true)
   @override
@@ -857,9 +857,9 @@ class _$StandingsImpl implements _Standings {
     required TResult Function() initial,
     required TResult Function(String errorMessage) error,
     required TResult Function() loading,
-    required TResult Function(StandingsInfoModel standings) standings,
+    required TResult Function(StandingsInfoModel standingInfo) standings,
   }) {
-    return standings(this.standings);
+    return standings(standingInfo);
   }
 
   @override
@@ -868,9 +868,9 @@ class _$StandingsImpl implements _Standings {
     TResult? Function()? initial,
     TResult? Function(String errorMessage)? error,
     TResult? Function()? loading,
-    TResult? Function(StandingsInfoModel standings)? standings,
+    TResult? Function(StandingsInfoModel standingInfo)? standings,
   }) {
-    return standings?.call(this.standings);
+    return standings?.call(standingInfo);
   }
 
   @override
@@ -879,11 +879,11 @@ class _$StandingsImpl implements _Standings {
     TResult Function()? initial,
     TResult Function(String errorMessage)? error,
     TResult Function()? loading,
-    TResult Function(StandingsInfoModel standings)? standings,
+    TResult Function(StandingsInfoModel standingInfo)? standings,
     required TResult orElse(),
   }) {
     if (standings != null) {
-      return standings(this.standings);
+      return standings(standingInfo);
     }
     return orElse();
   }
@@ -927,10 +927,10 @@ class _$StandingsImpl implements _Standings {
 }
 
 abstract class _Standings implements StandingsState {
-  const factory _Standings({required final StandingsInfoModel standings}) =
+  const factory _Standings({required final StandingsInfoModel standingInfo}) =
       _$StandingsImpl;
 
-  StandingsInfoModel get standings;
+  StandingsInfoModel get standingInfo;
   @JsonKey(ignore: true)
   _$$StandingsImplCopyWith<_$StandingsImpl> get copyWith =>
       throw _privateConstructorUsedError;

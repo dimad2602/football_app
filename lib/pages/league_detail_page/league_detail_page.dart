@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_app/blocs/bloc/standings_bloc.dart';
 import 'package:football_app/blocs/football_leagues/football_leagues_bloc.dart';
+import 'package:football_app/blocs/standings_bloc.dart/standings_bloc.dart';
 import 'package:football_app/data/repositories/chopper/standings_repo/standings_repo.dart';
 import 'package:football_app/pages/league_detail_page/league_detail_complite_ui.dart';
 

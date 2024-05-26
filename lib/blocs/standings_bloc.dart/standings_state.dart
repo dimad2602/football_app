@@ -13,6 +13,6 @@ class StandingsState with _$StandingsState {
   ) = _Loading;
 
   const factory StandingsState.standings({
-    required StandingsInfoModel standings,
+    required StandingsInfoModel standingInfo,
   }) = _Standings;
 }

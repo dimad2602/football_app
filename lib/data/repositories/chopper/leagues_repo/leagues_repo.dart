@@ -9,6 +9,9 @@ import 'package:football_app/models/football_models/leagues_response/leagues_res
 import 'package:football_app/models/football_models/seasons_response/seasons_response_model.dart';
 
 class LeaguesRepo implements ILeaguesRepository {
+  LeaguesResponseModel leaguesResponse =
+      const LeaguesResponseModel(status: false, data: []);
+
   final chopper = ChopperClient(
       baseUrl: Uri.parse("https://api-football-standings.azharimm.dev/"),
       services: [LeaguesChopperService.create()]);
@@ -24,6 +27,8 @@ class LeaguesRepo implements ILeaguesRepository {
           LeagueResponseDto.fromJson(json);
       final LeaguesResponseModel leaguesResponseModel =
           leagueResponseDto.toDomain();
+
+      leaguesResponse = leaguesResponseModel;
 
       return leaguesResponseModel;
     } catch (e) {
@@ -48,5 +53,10 @@ class LeaguesRepo implements ILeaguesRepository {
     } catch (e) {
       rethrow;
     }
+  }
+
+  @override
+  LeaguesResponseModel getLeaguesResponse() {
+    return leaguesResponse;
   }
 }
