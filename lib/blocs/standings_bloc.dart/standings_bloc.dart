@@ -38,7 +38,7 @@ class StandingsBloc extends Bloc<StandingsEvent, StandingsState> {
     emit(const StandingsState.loading());
     try {
       final standingsResponse = await _repository.fetchLeagueStandings(
-          id: value.id, season: value.season);
+          id: value.id, season: value.season, sort: value.sort);
       if (standingsResponse.status == true) {
         emit(StandingsState.standings(standingInfo: standingsResponse.data));
       } else {

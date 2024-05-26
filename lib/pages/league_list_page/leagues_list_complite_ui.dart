@@ -5,7 +5,8 @@ import 'package:football_app/models/football_models/league/league_model.dart';
 import 'package:football_app/widgets/leagues/league_card_widget.dart';
 
 @override
-Widget leaguesListCompliteUI(BuildContext context, List<LeagueModel> leaguesList) {
+Widget leaguesListCompliteUI(
+    BuildContext context, List<LeagueModel> leaguesList) {
   return SingleChildScrollView(
       physics: const ClampingScrollPhysics(),
       child: leaguesList.isNotEmpty
@@ -27,10 +28,13 @@ Widget leaguesListCompliteUI(BuildContext context, List<LeagueModel> leaguesList
                               arguments: leaguesList[index].id);
                         },
                         child: LeagueCardWidget(
-                          leagueModel: leaguesList[index], isDark: false,
+                          leagueModel: leaguesList[index],
+                          isDark: false,
                         ),
                       ),
-                      const SizedBox(height: 8,),
+                      const SizedBox(
+                        height: 8,
+                      ),
                     ],
                   ),
                 );

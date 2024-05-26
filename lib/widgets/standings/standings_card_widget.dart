@@ -7,11 +7,18 @@ import 'package:football_app/models/football_models/standings/standings_model.da
 class StandingsCardWidget extends StatelessWidget {
   final StandingsModel teamStanding;
   final int index;
+  final String sort;
+  final int totalTeams;
   const StandingsCardWidget(
-      {super.key, required this.teamStanding, required this.index});
+      {super.key,
+      required this.teamStanding,
+      required this.index,
+      required this.sort,
+      required this.totalTeams});
 
   @override
   Widget build(BuildContext context) {
+    int displayIndex = sort == 'asc' ? index + 1 : totalTeams - index;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       decoration: BoxDecoration(
@@ -53,7 +60,7 @@ class StandingsCardWidget extends StatelessWidget {
                 bold: true,
               ),
             ),
-            BigText(text: "${index + 1}"),
+            BigText(text: "$displayIndex"),
           ],
         ),
         subtitle: Column(
