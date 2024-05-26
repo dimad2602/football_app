@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_app/blocs/football_leagues/football_leagues_bloc.dart';
 import 'package:football_app/data/repositories/chopper/leagues_repo/leagues_repo.dart';
+import 'package:football_app/utils/app_colors.dart';
 import 'routes.dart';
 
 void main() {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       routes: routes,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
+        primaryColorLight: AppColors.lightGreenColor,
         useMaterial3: true,
       ),
       //home: const MyHomePage(title: 'Flutter Demo Home Page'),

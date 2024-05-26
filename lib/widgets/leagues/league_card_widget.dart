@@ -15,9 +15,19 @@ class LeagueCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
+        color: const Color.fromARGB(250, 255, 255, 255),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 4,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(
@@ -27,7 +37,8 @@ class LeagueCardWidget extends StatelessWidget {
               height: 60,
               child: FadeInImage.assetNetwork(
                 placeholder: 'lib/assets/icons/league_placeholder_512.png',
-                image: isDark ? leagueModel.logos.dark : leagueModel.logos.light,
+                image:
+                    isDark ? leagueModel.logos.dark : leagueModel.logos.light,
                 imageErrorBuilder: (context, error, stackTrace) {
                   return SvgPicture.asset(
                     'lib/assets/icons/league_placeholder.svg',
@@ -38,9 +49,14 @@ class LeagueCardWidget extends StatelessWidget {
             ),
             const SizedBox(width: 16),
             Expanded(
-              child: BigText(text: leagueModel.name, bold: true, maxLines: 2,),
+              child: BigText(
+                text: leagueModel.name,
+                bold: true,
+                maxLines: 2,
+              ),
             ),
-            Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey.shade600),
+            Icon(Icons.arrow_forward_ios,
+                size: 16, color: Colors.grey.shade600),
           ],
         ),
       ),

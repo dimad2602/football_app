@@ -30,6 +30,7 @@ Widget leaguesListCompliteUI(BuildContext context, List<LeagueModel> leaguesList
                           leagueModel: leaguesList[index], isDark: false,
                         ),
                       ),
+                      const SizedBox(height: 8,),
                     ],
                   ),
                 );
