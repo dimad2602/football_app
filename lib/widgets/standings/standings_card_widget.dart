@@ -5,13 +5,13 @@ import 'package:football_app/components/text/medium_text.dart';
 import 'package:football_app/models/football_models/standings/standings_model.dart';
 
 class StandingsCardWidget extends StatelessWidget {
-  final StandingsModel teamStanding;
+  final StandingsModel teamStandings;
   final int index;
   final String sort;
   final int totalTeams;
   const StandingsCardWidget(
       {super.key,
-      required this.teamStanding,
+      required this.teamStandings,
       required this.index,
       required this.sort,
       required this.totalTeams});
@@ -34,9 +34,9 @@ class StandingsCardWidget extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        leading: teamStanding.team.logos != null
+        leading: teamStandings.team.logos != null
             ? Image.network(
-                teamStanding.team.logos![0].href,
+                teamStandings.team.logos![0].href,
                 width: 50,
                 height: 50,
                 errorBuilder: (context, error, stackTrace) => SvgPicture.asset(
@@ -55,7 +55,7 @@ class StandingsCardWidget extends StatelessWidget {
           children: [
             Flexible(
               child: BigText(
-                text: teamStanding.team.name,
+                text: teamStandings.team.name,
                 maxLines: 2,
                 bold: true,
               ),
@@ -66,11 +66,11 @@ class StandingsCardWidget extends StatelessWidget {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MediumText(text: 'Games Played: ${teamStanding.stats![0].value}'),
-            MediumText(text: 'Wins: ${teamStanding.stats![7].value}'),
-            MediumText(text: 'Draws: ${teamStanding.stats![6].value}'),
-            MediumText(text: 'Losses: ${teamStanding.stats![1].value}'),
-            MediumText(text: 'Points: ${teamStanding.stats![3].value}'),
+            MediumText(text: 'Games Played: ${teamStandings.stats![0].value}'),
+            MediumText(text: 'Wins: ${teamStandings.stats![7].value}'),
+            MediumText(text: 'Draws: ${teamStandings.stats![6].value}'),
+            MediumText(text: 'Losses: ${teamStandings.stats![1].value}'),
+            MediumText(text: 'Points: ${teamStandings.stats![3].value}'),
           ],
         ),
       ),

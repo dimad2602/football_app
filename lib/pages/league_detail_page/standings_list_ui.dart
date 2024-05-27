@@ -3,17 +3,17 @@ import 'package:football_app/models/football_models/standings_info/standings_inf
 import 'package:football_app/widgets/standings/standings_card_widget.dart';
 
 Widget standingsListUI(
-    BuildContext context, StandingsInfoModel standingInfo, String sort) {
+    BuildContext context, StandingsInfoModel standingsInfo, String sort) {
   return ListView.builder(
     padding: const EdgeInsets.all(8.0),
-    itemCount: standingInfo.standings.length,
+    itemCount: standingsInfo.standings.length,
     itemBuilder: (context, index) {
-      final teamStanding = standingInfo.standings[index];
+      final teamStandings = standingsInfo.standings[index];
       return StandingsCardWidget(
-        teamStanding: teamStanding,
+        teamStandings: teamStandings,
         index: index,
         sort: sort,
-        totalTeams: standingInfo.standings.length,
+        totalTeams: standingsInfo.standings.length,
       );
     },
   );

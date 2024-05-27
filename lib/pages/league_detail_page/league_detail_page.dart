@@ -7,11 +7,12 @@ import 'package:football_app/pages/league_detail_page/league_detail_complite_ui.
 import 'package:football_app/utils/app_colors.dart';
 
 class LeagueDetailPage extends StatelessWidget {
-  const LeagueDetailPage({super.key});
+  final String leagueId;
+  const LeagueDetailPage({super.key, required this.leagueId});
 
   @override
   Widget build(BuildContext context) {
-    final leagueId = ModalRoute.of(context)?.settings.arguments as String;
+    //final leagueId = ModalRoute.of(context)?.settings.arguments as String;
     return Scaffold(
       backgroundColor: AppColors.blueAccentColor,
       body: BlocProvider(

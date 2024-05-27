@@ -99,7 +99,13 @@ class _LeagueDetailComplitePage extends State<LeagueDetailComplitePage> {
                         setState(() {
                           _selectedSeason = season;
                         });
-                        _toggleSortOrder();
+                        context
+                            .read<StandingsBloc>()
+                            .add(StandingsEvent.selectSeason(
+                              id: widget.leagueId,
+                              season: _selectedSeason.year.toString(),
+                              sort: _sortOrder, // Передача параметра сортировки
+                            ));
                       }
                     },
                     icon: Icon(Icons.arrow_drop_down,
